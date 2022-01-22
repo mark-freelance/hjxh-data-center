@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.KdWdtzdDao">
+
+    <resultMap type="com.mulaobao.administration.entity.KdWdtzd" id="KdWdtzdMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="kdName" column="Kd_Name" jdbcType="VARCHAR"/>
+        <result property="dateTime" column="Date_time" jdbcType="VARCHAR"/>
+        <result property="wlDh" column="Wl_dh" jdbcType="VARCHAR"/>
+        <result property="sjZl" column="Sj_zl" jdbcType="NUMERIC"/>
+        <result property="province" column="Province" jdbcType="VARCHAR"/>
+        <result property="city" column="City" jdbcType="VARCHAR"/>
+        <result property="county" column="County" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="KdWdtzdMap">
+        select
+          id, Kd_Name, Date_time, Wl_dh, Sj_zl, Province, City, County
+        from Kd_wdtzd
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="KdWdtzdMap">
+        select
+          id, Kd_Name, Date_time, Wl_dh, Sj_zl, Province, City, County
+        from Kd_wdtzd
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="kdName != null and kdName != ''">
+                and Kd_Name = #{kdName}
+            </if>
+            <if test="dateTime != null and dateTime != ''">
+                and Date_time = #{dateTime}
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                and Wl_dh = #{wlDh}
+            </if>
+            <if test="sjZl != null">
+                and Sj_zl = #{sjZl}
+            </if>
+            <if test="province != null and province != ''">
+                and Province = #{province}
+            </if>
+            <if test="city != null and city != ''">
+                and City = #{city}
+            </if>
+            <if test="county != null and county != ''">
+                and County = #{county}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from Kd_wdtzd
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="kdName != null and kdName != ''">
+                and Kd_Name = #{kdName}
+            </if>
+            <if test="dateTime != null and dateTime != ''">
+                and Date_time = #{dateTime}
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                and Wl_dh = #{wlDh}
+            </if>
+            <if test="sjZl != null">
+                and Sj_zl = #{sjZl}
+            </if>
+            <if test="province != null and province != ''">
+                and Province = #{province}
+            </if>
+            <if test="city != null and city != ''">
+                and City = #{city}
+            </if>
+            <if test="county != null and county != ''">
+                and County = #{county}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Kd_wdtzd(Kd_Name, Date_time, Wl_dh, Sj_zl, Province, City, County)
+        values (#{kdName}, #{dateTime}, #{wlDh}, #{sjZl}, #{province}, #{city}, #{county})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Kd_wdtzd(id,Kd_Name, Date_time, Wl_dh, Sj_zl, Province, City, County)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id},#{entity.kdName}, #{entity.dateTime}, #{entity.wlDh}, #{entity.sjZl}, #{entity.province}, #{entity.city}, #{entity.county})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Kd_wdtzd(Kd_Name, Date_time, Wl_dh, Sj_zl, Province, City, County)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.kdName}, #{entity.dateTime}, #{entity.wlDh}, #{entity.sjZl}, #{entity.province}, #{entity.city}, #{entity.county})
+        </foreach>
+        on duplicate key update
+        Kd_Name = values(Kd_Name),
+        Date_time = values(Date_time),
+        Wl_dh = values(Wl_dh),
+        Sj_zl = values(Sj_zl),
+        Province = values(Province),
+        City = values(City),
+        County = values(County)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Kd_wdtzd
+        <set>
+            <if test="kdName != null and kdName != ''">
+                Kd_Name = #{kdName},
+            </if>
+            <if test="dateTime != null and dateTime != ''">
+                Date_time = #{dateTime},
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                Wl_dh = #{wlDh},
+            </if>
+            <if test="sjZl != null">
+                Sj_zl = #{sjZl},
+            </if>
+            <if test="province != null and province != ''">
+                Province = #{province},
+            </if>
+            <if test="city != null and city != ''">
+                City = #{city},
+            </if>
+            <if test="county != null and county != ''">
+                County = #{county},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Kd_wdtzd where id = #{id}
+    </delete>
+
+</mapper>
+

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.DpDdmxDao">
+
+    <resultMap type="com.mulaobao.administration.entity.DpDdmx" id="DpDdmxMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="shopBh" column="Shop_bh" jdbcType="VARCHAR"/>
+        <result property="goodsName" column="Goods_name" jdbcType="VARCHAR"/>
+        <result property="shDdh" column="Sh_ddh" jdbcType="VARCHAR"/>
+        <result property="ddZt" column="Dd_zt" jdbcType="VARCHAR"/>
+        <result property="goodsZj" column="Goods_zj" jdbcType="NUMERIC"/>
+        <result property="dpyhZk" column="Dpyh_zk" jdbcType="NUMERIC"/>
+        <result property="ptyhZk" column="Ptyh_zk" jdbcType="NUMERIC"/>
+        <result property="yhsfJe" column="Yhsf_je" jdbcType="NUMERIC"/>
+        <result property="sjssJe" column="Sjss_je" jdbcType="NUMERIC"/>
+        <result property="goodsSl" column="Goods_sl" jdbcType="INTEGER"/>
+        <result property="fhDatetime" column="Fh_datetime" jdbcType="TIMESTAMP"/>
+        <result property="sfDatetime" column="Sf_datetime" jdbcType="TIMESTAMP"/>
+        <result property="goodsId" column="Goods_id" jdbcType="VARCHAR"/>
+        <result property="goodsGg" column="Goods_gg" jdbcType="VARCHAR"/>
+        <result property="ysId" column="Ys_id" jdbcType="VARCHAR"/>
+        <result property="shZt" column="Sh_zt" jdbcType="VARCHAR"/>
+        <result property="kdDh" column="Kd_dh" jdbcType="VARCHAR"/>
+        <result property="kdGs" column="Kd_gs" jdbcType="VARCHAR"/>
+        <result property="cjDatetime" column="Cj_datetime" jdbcType="TIMESTAMP"/>
+        <result property="sfFq" column="Sf_fq" jdbcType="VARCHAR"/>
+        <result property="fqQs" column="Fq_qs" jdbcType="INTEGER"/>
+        <result property="sxfCdf" column="Sxf_cdf" jdbcType="VARCHAR"/>
+        <result property="sxfRate" column="Sxf_rate" jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="DpDdmxMap">
+        select
+          id, Shop_bh, Goods_name, Sh_ddh, Dd_zt, Goods_zj, Dpyh_zk, Ptyh_zk, Yhsf_je, Sjss_je, Goods_sl, Fh_datetime, Sf_datetime, Goods_id, Goods_gg, Ys_id, Sh_zt, Kd_dh, Kd_gs, Cj_datetime, Sf_fq, Fq_qs, Sxf_cdf, Sxf_rate
+        from Dp_ddmx
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DpDdmxMap">
+        select
+          id, Shop_bh, Goods_name, Sh_ddh, Dd_zt, Goods_zj, Dpyh_zk, Ptyh_zk, Yhsf_je, Sjss_je, Goods_sl, Fh_datetime, Sf_datetime, Goods_id, Goods_gg, Ys_id, Sh_zt, Kd_dh, Kd_gs, Cj_datetime, Sf_fq, Fq_qs, Sxf_cdf, Sxf_rate
+        from Dp_ddmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                and Goods_name = #{goodsName}
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                and Sh_ddh = #{shDdh}
+            </if>
+            <if test="ddZt != null and ddZt != ''">
+                and Dd_zt = #{ddZt}
+            </if>
+            <if test="goodsZj != null">
+                and Goods_zj = #{goodsZj}
+            </if>
+            <if test="dpyhZk != null">
+                and Dpyh_zk = #{dpyhZk}
+            </if>
+            <if test="ptyhZk != null">
+                and Ptyh_zk = #{ptyhZk}
+            </if>
+            <if test="yhsfJe != null">
+                and Yhsf_je = #{yhsfJe}
+            </if>
+            <if test="sjssJe != null">
+                and Sjss_je = #{sjssJe}
+            </if>
+            <if test="goodsSl != null">
+                and Goods_sl = #{goodsSl}
+            </if>
+            <if test="fhDatetime != null">
+                and Fh_datetime = #{fhDatetime}
+            </if>
+            <if test="sfDatetime != null">
+                and Sf_datetime = #{sfDatetime}
+            </if>
+            <if test="goodsId != null and goodsId != ''">
+                and Goods_id = #{goodsId}
+            </if>
+            <if test="goodsGg != null and goodsGg != ''">
+                and Goods_gg = #{goodsGg}
+            </if>
+            <if test="ysId != null and ysId != ''">
+                and Ys_id = #{ysId}
+            </if>
+            <if test="shZt != null and shZt != ''">
+                and Sh_zt = #{shZt}
+            </if>
+            <if test="kdDh != null and kdDh != ''">
+                and Kd_dh = #{kdDh}
+            </if>
+            <if test="kdGs != null and kdGs != ''">
+                and Kd_gs = #{kdGs}
+            </if>
+            <if test="cjDatetime != null">
+                and Cj_datetime = #{cjDatetime}
+            </if>
+            <if test="sfFq != null and sfFq != ''">
+                and Sf_fq = #{sfFq}
+            </if>
+            <if test="fqQs != null">
+                and Fq_qs = #{fqQs}
+            </if>
+            <if test="sxfCdf != null and sxfCdf != ''">
+                and Sxf_cdf = #{sxfCdf}
+            </if>
+            <if test="sxfRate != null">
+                and Sxf_rate = #{sxfRate}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from Dp_ddmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                and Goods_name = #{goodsName}
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                and Sh_ddh = #{shDdh}
+            </if>
+            <if test="ddZt != null and ddZt != ''">
+                and Dd_zt = #{ddZt}
+            </if>
+            <if test="goodsZj != null">
+                and Goods_zj = #{goodsZj}
+            </if>
+            <if test="dpyhZk != null">
+                and Dpyh_zk = #{dpyhZk}
+            </if>
+            <if test="ptyhZk != null">
+                and Ptyh_zk = #{ptyhZk}
+            </if>
+            <if test="yhsfJe != null">
+                and Yhsf_je = #{yhsfJe}
+            </if>
+            <if test="sjssJe != null">
+                and Sjss_je = #{sjssJe}
+            </if>
+            <if test="goodsSl != null">
+                and Goods_sl = #{goodsSl}
+            </if>
+            <if test="fhDatetime != null">
+                and Fh_datetime = #{fhDatetime}
+            </if>
+            <if test="sfDatetime != null">
+                and Sf_datetime = #{sfDatetime}
+            </if>
+            <if test="goodsId != null and goodsId != ''">
+                and Goods_id = #{goodsId}
+            </if>
+            <if test="goodsGg != null and goodsGg != ''">
+                and Goods_gg = #{goodsGg}
+            </if>
+            <if test="ysId != null and ysId != ''">
+                and Ys_id = #{ysId}
+            </if>
+            <if test="shZt != null and shZt != ''">
+                and Sh_zt = #{shZt}
+            </if>
+            <if test="kdDh != null and kdDh != ''">
+                and Kd_dh = #{kdDh}
+            </if>
+            <if test="kdGs != null and kdGs != ''">
+                and Kd_gs = #{kdGs}
+            </if>
+            <if test="cjDatetime != null">
+                and Cj_datetime = #{cjDatetime}
+            </if>
+            <if test="sfFq != null and sfFq != ''">
+                and Sf_fq = #{sfFq}
+            </if>
+            <if test="fqQs != null">
+                and Fq_qs = #{fqQs}
+            </if>
+            <if test="sxfCdf != null and sxfCdf != ''">
+                and Sxf_cdf = #{sxfCdf}
+            </if>
+            <if test="sxfRate != null">
+                and Sxf_rate = #{sxfRate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Dp_ddmx(id,Shop_bh, Goods_name, Sh_ddh, Dd_zt, Goods_zj, Dpyh_zk, Ptyh_zk, Yhsf_je, Sjss_je, Goods_sl, Fh_datetime, Sf_datetime, Goods_id, Goods_gg, Ys_id, Sh_zt, Kd_dh, Kd_gs, Cj_datetime, Sf_fq, Fq_qs, Sxf_cdf, Sxf_rate)
+        values (#{id},#{shopBh}, #{goodsName}, #{shDdh}, #{ddZt}, #{goodsZj}, #{dpyhZk}, #{ptyhZk}, #{yhsfJe}, #{sjssJe}, #{goodsSl}, #{fhDatetime}, #{sfDatetime}, #{goodsId}, #{goodsGg}, #{ysId}, #{shZt}, #{kdDh}, #{kdGs}, #{cjDatetime}, #{sfFq}, #{fqQs}, #{sxfCdf}, #{sxfRate})
+    </insert>
+
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Dp_ddmx(id,Shop_bh, Goods_name, Sh_ddh, Dd_zt, Goods_zj, Dpyh_zk, Ptyh_zk, Yhsf_je, Sjss_je, Goods_sl, Fh_datetime, Sf_datetime, Goods_id, Goods_gg, Ys_id, Sh_zt, Kd_dh, Kd_gs, Cj_datetime, Sf_fq, Fq_qs, Sxf_cdf, Sxf_rate)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id},#{entity.shopBh}, #{entity.goodsName}, #{entity.shDdh}, #{entity.ddZt}, #{entity.goodsZj}, #{entity.dpyhZk}, #{entity.ptyhZk}, #{entity.yhsfJe}, #{entity.sjssJe}, #{entity.goodsSl}, #{entity.fhDatetime,jdbcType = TIMESTAMP}, #{entity.sfDatetime,jdbcType = TIMESTAMP}, #{entity.goodsId}, #{entity.goodsGg}, #{entity.ysId}, #{entity.shZt}, #{entity.kdDh}, #{entity.kdGs}, #{entity.cjDatetime,jdbcType = TIMESTAMP}, #{entity.sfFq}, #{entity.fqQs}, #{entity.sxfCdf}, #{entity.sxfRate})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Dp_ddmx(Shop_bh, Goods_name, Sh_ddh, Dd_zt, Goods_zj, Dpyh_zk, Ptyh_zk, Yhsf_je, Sjss_je, Goods_sl, Fh_datetime, Sf_datetime, Goods_id, Goods_gg, Ys_id, Sh_zt, Kd_dh, Kd_gs, Cj_datetime, Sf_fq, Fq_qs, Sxf_cdf, Sxf_rate)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.shopBh}, #{entity.goodsName}, #{entity.shDdh}, #{entity.ddZt}, #{entity.goodsZj}, #{entity.dpyhZk}, #{entity.ptyhZk}, #{entity.yhsfJe}, #{entity.sjssJe}, #{entity.goodsSl}, #{entity.fhDatetime}, #{entity.sfDatetime}, #{entity.goodsId}, #{entity.goodsGg}, #{entity.ysId}, #{entity.shZt}, #{entity.kdDh}, #{entity.kdGs}, #{entity.cjDatetime}, #{entity.sfFq}, #{entity.fqQs}, #{entity.sxfCdf}, #{entity.sxfRate})
+        </foreach>
+        on duplicate key update
+        Shop_bh = values(Shop_bh),
+        Goods_name = values(Goods_name),
+        Sh_ddh = values(Sh_ddh),
+        Dd_zt = values(Dd_zt),
+        Goods_zj = values(Goods_zj),
+        Dpyh_zk = values(Dpyh_zk),
+        Ptyh_zk = values(Ptyh_zk),
+        Yhsf_je = values(Yhsf_je),
+        Sjss_je = values(Sjss_je),
+        Goods_sl = values(Goods_sl),
+        Fh_datetime = values(Fh_datetime),
+        Sf_datetime = values(Sf_datetime),
+        Goods_id = values(Goods_id),
+        Goods_gg = values(Goods_gg),
+        Ys_id = values(Ys_id),
+        Sh_zt = values(Sh_zt),
+        Kd_dh = values(Kd_dh),
+        Kd_gs = values(Kd_gs),
+        Cj_datetime = values(Cj_datetime),
+        Sf_fq = values(Sf_fq),
+        Fq_qs = values(Fq_qs),
+        Sxf_cdf = values(Sxf_cdf),
+        Sxf_rate = values(Sxf_rate)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Dp_ddmx
+        <set>
+            <if test="shopBh != null and shopBh != ''">
+                Shop_bh = #{shopBh},
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                Goods_name = #{goodsName},
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                Sh_ddh = #{shDdh},
+            </if>
+            <if test="ddZt != null and ddZt != ''">
+                Dd_zt = #{ddZt},
+            </if>
+            <if test="goodsZj != null">
+                Goods_zj = #{goodsZj},
+            </if>
+            <if test="dpyhZk != null">
+                Dpyh_zk = #{dpyhZk},
+            </if>
+            <if test="ptyhZk != null">
+                Ptyh_zk = #{ptyhZk},
+            </if>
+            <if test="yhsfJe != null">
+                Yhsf_je = #{yhsfJe},
+            </if>
+            <if test="sjssJe != null">
+                Sjss_je = #{sjssJe},
+            </if>
+            <if test="goodsSl != null">
+                Goods_sl = #{goodsSl},
+            </if>
+            <if test="fhDatetime != null">
+                Fh_datetime = #{fhDatetime},
+            </if>
+            <if test="sfDatetime != null">
+                Sf_datetime = #{sfDatetime},
+            </if>
+            <if test="goodsId != null and goodsId != ''">
+                Goods_id = #{goodsId},
+            </if>
+            <if test="goodsGg != null and goodsGg != ''">
+                Goods_gg = #{goodsGg},
+            </if>
+            <if test="ysId != null and ysId != ''">
+                Ys_id = #{ysId},
+            </if>
+            <if test="shZt != null and shZt != ''">
+                Sh_zt = #{shZt},
+            </if>
+            <if test="kdDh != null and kdDh != ''">
+                Kd_dh = #{kdDh},
+            </if>
+            <if test="kdGs != null and kdGs != ''">
+                Kd_gs = #{kdGs},
+            </if>
+            <if test="cjDatetime != null">
+                Cj_datetime = #{cjDatetime},
+            </if>
+            <if test="sfFq != null and sfFq != ''">
+                Sf_fq = #{sfFq},
+            </if>
+            <if test="fqQs != null">
+                Fq_qs = #{fqQs},
+            </if>
+            <if test="sxfCdf != null and sxfCdf != ''">
+                Sxf_cdf = #{sxfCdf},
+            </if>
+            <if test="sxfRate != null">
+                Sxf_rate = #{sxfRate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Dp_ddmx where id = #{id}
+    </delete>
+
+</mapper>
+

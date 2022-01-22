@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20170720" releaseVersion="10.0.0">
+<TableDataMap>
+<TableData name="拼多多食品" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-03]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '101','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="淘系" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-26]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '102','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="多多买菜" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-26]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '103','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="拼多多生鲜" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-26]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '104','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="推广" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-26]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '105','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+<TableData name="产品运营" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="jxsj"/>
+<O>
+<![CDATA[2021-09-26]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[RoyalTtiger]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[exec proc_Achievements2 '106','${jxsj}']]></Query>
+<PageQuery>
+<![CDATA[]]></PageQuery>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.ExcelO">
+<WidgetAttr aspectRatioLocked="false" aspectRatioBackup="-1.0" description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Fine-Engine_Export_Excel_Simple')}]]></Text>
+<Hotkeys>
+<![CDATA[]]></Hotkeys>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" showAsImage="false" autoScale="false" tdHeavy="false"/>
+</WebPageContent>
+</ReportWebAttr>
+<ElementCaseMobileAttr>
+<ElementCaseMobileAttrProvider horizontal="1" vertical="1" zoom="true" refresh="false" isUseHTML="false" isMobileCanvasSize="false" appearRefresh="false" allowFullScreen="false" allowDoubleClickOrZoom="true" functionalWhenUnactivated="false"/>
+</ElementCaseMobileAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,722880,722880,723900,723900,723900,723900,723900,723900,723900,723900,722880,723900,723900,722880,722880,0,723900,723900,723900,723900,722880,722880,723900,723900,723900,723900,723900,723900,723900,723900,722880,723900,723900,722880,722880,0,723900,723900,723900,723900,722880,722880,723900,723900,723900,723900,723900,723900,723900,723900,722880,723900,723900,722880,722880,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4152900,1728000,3009900,2743200,2743200,4152900,1728000,3009600,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" cs="2" rs="2" s="0">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=left($jxsj,7)+'-绩效']]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="3">
+<O>
+<![CDATA[拼多多食品]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="2" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="6" r="2" s="2">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="7" r="2" s="3">
+<O>
+<![CDATA[淘系]]></O>
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="1" r="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="责任人"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="6" r="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="1">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="责任人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="4" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="4" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="5" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="6" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="6" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="7" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="完成率"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="7" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="完成率"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="8" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="8" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="8" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="8" s="5">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="9" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="9" s="7">
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="9" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="10" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="10" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="10" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="10" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="11" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="11" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="11" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="11" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="12" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="12" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="12" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C4 = '卫韦']]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-256"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="1"/>
+</C>
+<C c="5" r="12" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="12" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="12" s="10">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[H4 = '丁喜']]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-256"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="1"/>
+</C>
+<C c="0" r="13" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="13" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="101%-200%"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="13" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="13" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="13" s="10">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="101%-200%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="14" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="14" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="14" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="200%以上"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="14" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="14" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="14" s="10">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="200%以上"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="15" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="15" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C12, C13, C14, C15)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="15" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="15" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H12, H13, H14, H15)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="费用控制"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="16" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="16" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="16" s="10">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="费用控制"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="17" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="17" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="17" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="执行力"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=C20]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="17" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="17" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="17" s="10">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="执行力"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=H20]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="18" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="18" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C16, C17, C18)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="18" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="18" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H16, H17, H18)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" cs="2" s="10">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="拼多多食品" columnName="remarks"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="19" cs="2" s="10">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="淘系" columnName="remarks"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="22" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="1" r="22" s="11">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="22" s="3">
+<O>
+<![CDATA[多多买菜]]></O>
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="5" r="22" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="6" r="22" s="11">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="7" r="22" s="3">
+<O>
+<![CDATA[拼多多生鲜]]></O>
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="1" r="23" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" s="1">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="责任人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="6" r="23" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="23" s="1">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="责任人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="24" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="24" s="4">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="24" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="24" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="24" s="4">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="25" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="25" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="25" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="26" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="26" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="26" s="4">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="26" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="26" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="26" s="4">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="27" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="27" s="5">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="完成率"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="27" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="27" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="27" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="完成率"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="28" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="28" s="13">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="28" s="5">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="28" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="28" s="13">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="28" s="5">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="29" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="29" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="29">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="29" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="29" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="29" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="29">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="29" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="30" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="30" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="30" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="30" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="30" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="30" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="31" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="31" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="31" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="31" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="31" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="31" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="32" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="32" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="32" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[C24 = '胡双乐']]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.BackgroundHighlightAction">
+<Background name="ColorBackground" color="-256"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="1"/>
+</C>
+<C c="5" r="32" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="32" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="32" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="33" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="33" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="33" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="101%-200%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="33" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="33" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="33" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="101%-200%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="34" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="34" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="34" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="200%以上"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="34" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="34" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="34" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="200%以上"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="35" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="35" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C32, C33, C34, C35)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="35" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="35" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H32, H33, H34, H35)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="36" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="36" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="36" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="费用控制"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="36" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="36" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="36" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="费用控制"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="37" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="37" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="37" s="10">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="执行力"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=C40]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="37" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="37" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="37" s="10">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="执行力"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=H40]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="38" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="38" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C36, C37, C38)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="38" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="38" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H36, H37, H38)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="39" cs="2" s="15">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="多多买菜" columnName="remarks"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="39" cs="2" s="15">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="拼多多生鲜" columnName="remarks"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="40" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="41" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="41" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="42" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="1" r="42" s="11">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="2" r="42" s="3">
+<O>
+<![CDATA[推广]]></O>
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="5" r="42" rs="2" s="1">
+<O>
+<![CDATA[项目]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
+</C>
+<C c="6" r="42" s="11">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="7" r="42" s="3">
+<O>
+<![CDATA[产品运营]]></O>
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="1" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="43" s="1">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="责任人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="6" r="43" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="43" s="1">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="责任人"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="44" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="44" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="44" s="4">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="44" s="1">
+<O>
+<![CDATA[本月目标销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="44" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="44" s="4">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="目标销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="45" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="45" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="45" s="5">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="45" s="1">
+<O>
+<![CDATA[上月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="45" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="45" s="5">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="上期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="46" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="46" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="46" s="4">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="46" s="1">
+<O>
+<![CDATA[本月已完成销售额]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="46" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="46" s="4">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="完成销售额"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$+'万']]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="47" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="47" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="47" s="5">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="完成率"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="47" s="1">
+<O>
+<![CDATA[完成率]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="47" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="47" s="5">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="完成率"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="48" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="48" s="13">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="48" s="5">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="48" s="1">
+<O>
+<![CDATA[本月费销比]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="48" s="13">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="48" s="5">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="本期费销比"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="0" r="49" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="49" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="49">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="49" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="49" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="49" s="12">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="49">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="50" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="50" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="50" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="50" s="1">
+<O>
+<![CDATA[规则]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="50" s="1">
+<O>
+<![CDATA[分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="50" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="51" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="51" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="51" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="51" s="1">
+<O>
+<![CDATA[60%-100%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="51" s="1">
+<O t="I">
+<![CDATA[60]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="51" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="60%-100%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="52" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="52" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="52" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="52" s="1">
+<O>
+<![CDATA[加分项]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="52" s="1">
+<O t="I">
+<![CDATA[10]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="52" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="加分项"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="53" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="53" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="53" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="101%-200%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="53" s="1">
+<O>
+<![CDATA[101%-200%]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="53" s="1">
+<O t="BigDecimal">
+<![CDATA[1.2]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="53" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="101%-200%"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="54" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="54" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="54" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="200%以上"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="54" s="1">
+<O>
+<![CDATA[200%以上]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="54" s="1">
+<O t="BigDecimal">
+<![CDATA[1.5]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="54" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="200%以上"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="55" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="55" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C52, C53, C54, C55)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="55" cs="2" s="1">
+<O>
+<![CDATA[目标分合计]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="55" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H52, H53, H54, H55)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="56" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="56" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="56" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="费用控制"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="56" s="1">
+<O>
+<![CDATA[费用控制]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="56" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="56" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="费用控制"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="57" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="57" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="57" s="10">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="执行力"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=C60]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="57" s="1">
+<O>
+<![CDATA[执行力]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="6" r="57" s="1">
+<O t="I">
+<![CDATA[20]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="57" s="10">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="执行力"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr>
+<ToolTipText>
+<![CDATA[=H60]]></ToolTipText>
+</CellGUIAttr>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="58" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="58" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(C56, C57, C58)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="58" cs="2" s="1">
+<O>
+<![CDATA[合计分值]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="58" s="10">
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=sum(H56, H57, H58)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="59" cs="2" s="15">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="59" s="8">
+<O t="DSColumn">
+<Attributes dsName="推广" columnName="remarks"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+<C c="5" r="59" cs="2" s="15">
+<O>
+<![CDATA[备注]]></O>
+<PrivilegeControl/>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="59" s="8">
+<O t="DSColumn">
+<Attributes dsName="产品运营" columnName="remarks"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy/>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="79200000" height="44640000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+<Background name="ColorBackground" color="-1"/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0" useParamsTemplate="false" currentIndex="4"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr aspectRatioLocked="false" aspectRatioBackup="-1.0" description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-526086"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<Listener event="stopedit" name="编辑结束1">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[_g().parameterCommit();]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="jxsj"/>
+<LabelName name="绩效时间:"/>
+<WidgetAttr aspectRatioLocked="false" aspectRatioBackup="-1.0" description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr enddatefm="=today()"/>
+<widgetValue>
+<O t="XMLable" class="com.fr.base.Formula">
+<Attributes>
+<![CDATA[=today()]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="130" y="25" width="119" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labeljxsj"/>
+<WidgetAttr aspectRatioLocked="false" aspectRatioBackup="-1.0" description="">
+<MobileBookMark useBookMark="false" bookMarkName="" frozen="false"/>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[绩效时间:]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="50" y="25" width="80" height="21"/>
+</Widget>
+<ShowBookmarks showBookmarks="false"/>
+<Sorted sorted="false"/>
+<MobileWidgetList>
+<Widget widgetName="jxsj"/>
+</MobileWidgetList>
+<FrozenWidgets/>
+<MobileBookMarkStyle class="com.fr.form.ui.mobile.impl.DefaultMobileBookMarkStyle"/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<UseParamsTemplate use="false"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<NameTagModified/>
+<WidgetNameTagMap/>
+<ParamAttr class="com.fr.report.mobile.DefaultMobileParamStyle"/>
+<ParamStyle class="com.fr.form.ui.mobile.impl.DefaultMobileParameterStyle"/>
+</Layout>
+<DesignAttr width="960" height="80"/>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="120"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="1" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat" roundingMode="6">
+<![CDATA[#,##0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat" roundingMode="6">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat" roundingMode="6">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-16777216"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1" color="-16777216"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="KAA"/>
+<PreviewType PreviewType="0"/>
+<TemplateCloudInfoAttrMark class="com.fr.plugin.cloud.analytics.attr.TemplateInfoAttrMark" pluginID="com.fr.plugin.cloud.analytics.v10" plugin-version="2.3.6.20211125">
+<TemplateCloudInfoAttrMark createTime="1634534967003"/>
+</TemplateCloudInfoAttrMark>
+<TemplateIdAttMark class="com.fr.base.iofile.attr.TemplateIdAttrMark">
+<TemplateIdAttMark TemplateId="cab5c323-b12c-4b15-ae3d-9e04afcab932"/>
+</TemplateIdAttMark>
+</WorkBook>

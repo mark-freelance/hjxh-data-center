@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.WdtCkmxDao">
+
+    <resultMap type="com.mulaobao.administration.entity.WdtCkmx" id="WdtCkmxMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="ckDh" column="Ck_dh" jdbcType="VARCHAR"/>
+        <result property="warehouse" column="Warehouse" jdbcType="VARCHAR"/>
+        <result property="person" column="Person" jdbcType="VARCHAR"/>
+        <result property="yDh" column="Y_dh" jdbcType="VARCHAR"/>
+        <result property="wlDh" column="Wl_dh" jdbcType="VARCHAR"/>
+        <result property="sjBm" column="Sj_bm" jdbcType="VARCHAR"/>
+        <result property="goodsBm" column="Goods_bm" jdbcType="VARCHAR"/>
+        <result property="goodsName" column="Goods_name" jdbcType="VARCHAR"/>
+        <result property="brand" column="Brand" jdbcType="VARCHAR"/>
+        <result property="num" column="Num" jdbcType="NUMERIC"/>
+        <result property="ckHw" column="Ck_hw" jdbcType="VARCHAR"/>
+        <result property="price" column="Price" jdbcType="NUMERIC"/>
+        <result property="hjJe" column="Hj_je" jdbcType="NUMERIC"/>
+        <result property="costPrice" column="Cost_price" jdbcType="NUMERIC"/>
+        <result property="cost" column="Cost" jdbcType="NUMERIC"/>
+        <result property="ckDatetime" column="Ck_datetime" jdbcType="TIMESTAMP"/>
+        <result property="dateTime" column="Date_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="WdtCkmxMap">
+        select
+          id, Ck_dh, Warehouse, Person, Y_dh, Wl_dh, Sj_bm, Goods_bm, Goods_name, Brand, Num, Ck_hw, Price, Hj_je, Cost_price, Cost, Ck_datetime, Date_time
+        from Wdt_ckmx
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="WdtCkmxMap">
+        select
+          id, Ck_dh, Warehouse, Person, Y_dh, Wl_dh, Sj_bm, Goods_bm, Goods_name, Brand, Num, Ck_hw, Price, Hj_je, Cost_price, Cost, Ck_datetime, Date_time
+        from Wdt_ckmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="ckDh != null and ckDh != ''">
+                and Ck_dh = #{ckDh}
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                and Warehouse = #{warehouse}
+            </if>
+            <if test="person != null and person != ''">
+                and Person = #{person}
+            </if>
+            <if test="yDh != null and yDh != ''">
+                and Y_dh = #{yDh}
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                and Wl_dh = #{wlDh}
+            </if>
+            <if test="sjBm != null and sjBm != ''">
+                and Sj_bm = #{sjBm}
+            </if>
+            <if test="goodsBm != null and goodsBm != ''">
+                and Goods_bm = #{goodsBm}
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                and Goods_name = #{goodsName}
+            </if>
+            <if test="brand != null and brand != ''">
+                and Brand = #{brand}
+            </if>
+            <if test="num != null">
+                and Num = #{num}
+            </if>
+            <if test="ckHw != null and ckHw != ''">
+                and Ck_hw = #{ckHw}
+            </if>
+            <if test="price != null">
+                and Price = #{price}
+            </if>
+            <if test="hjJe != null">
+                and Hj_je = #{hjJe}
+            </if>
+            <if test="costPrice != null">
+                and Cost_price = #{costPrice}
+            </if>
+            <if test="cost != null">
+                and Cost = #{cost}
+            </if>
+            <if test="ckDatetime != null">
+                and Ck_datetime = #{ckDatetime}
+            </if>
+            <if test="dateTime != null">
+                and Date_time = #{dateTime}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from Wdt_ckmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="ckDh != null and ckDh != ''">
+                and Ck_dh = #{ckDh}
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                and Warehouse = #{warehouse}
+            </if>
+            <if test="person != null and person != ''">
+                and Person = #{person}
+            </if>
+            <if test="yDh != null and yDh != ''">
+                and Y_dh = #{yDh}
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                and Wl_dh = #{wlDh}
+            </if>
+            <if test="sjBm != null and sjBm != ''">
+                and Sj_bm = #{sjBm}
+            </if>
+            <if test="goodsBm != null and goodsBm != ''">
+                and Goods_bm = #{goodsBm}
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                and Goods_name = #{goodsName}
+            </if>
+            <if test="brand != null and brand != ''">
+                and Brand = #{brand}
+            </if>
+            <if test="num != null">
+                and Num = #{num}
+            </if>
+            <if test="ckHw != null and ckHw != ''">
+                and Ck_hw = #{ckHw}
+            </if>
+            <if test="price != null">
+                and Price = #{price}
+            </if>
+            <if test="hjJe != null">
+                and Hj_je = #{hjJe}
+            </if>
+            <if test="costPrice != null">
+                and Cost_price = #{costPrice}
+            </if>
+            <if test="cost != null">
+                and Cost = #{cost}
+            </if>
+            <if test="ckDatetime != null">
+                and Ck_datetime = #{ckDatetime}
+            </if>
+            <if test="dateTime != null">
+                and Date_time = #{dateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into Wdt_ckmx(Ck_dh, Warehouse, Person, Y_dh, Wl_dh, Sj_bm, Goods_bm, Goods_name, Brand, Num, Ck_hw, Price, Hj_je, Cost_price, Cost, Ck_datetime, Date_time)
+        values (#{ckDh}, #{warehouse}, #{person}, #{yDh}, #{wlDh}, #{sjBm}, #{goodsBm}, #{goodsName}, #{brand}, #{num}, #{ckHw}, #{price}, #{hjJe}, #{costPrice}, #{cost}, #{ckDatetime}, #{dateTime})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Wdt_ckmx(id,Ck_dh, Warehouse, Person, Y_dh, Wl_dh, Sj_bm, Goods_bm, Goods_name, Brand, Num, Ck_hw, Price, Hj_je, Cost_price, Cost, Ck_datetime, Date_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id},#{entity.ckDh}, #{entity.warehouse}, #{entity.person}, #{entity.yDh}, #{entity.wlDh}, #{entity.sjBm}, #{entity.goodsBm}, #{entity.goodsName}, #{entity.brand}, #{entity.num}, #{entity.ckHw}, #{entity.price}, #{entity.hjJe}, #{entity.costPrice}, #{entity.cost}, #{entity.ckDatetime}, #{entity.dateTime})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into Wdt_ckmx(Ck_dh, Warehouse, Person, Y_dh, Wl_dh, Sj_bm, Goods_bm, Goods_name, Brand, Num, Ck_hw, Price, Hj_je, Cost_price, Cost, Ck_datetime, Date_time)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.ckDh}, #{entity.warehouse}, #{entity.person}, #{entity.yDh}, #{entity.wlDh}, #{entity.sjBm}, #{entity.goodsBm}, #{entity.goodsName}, #{entity.brand}, #{entity.num}, #{entity.ckHw}, #{entity.price}, #{entity.hjJe}, #{entity.costPrice}, #{entity.cost}, #{entity.ckDatetime}, #{entity.dateTime})
+        </foreach>
+        on duplicate key update
+        Ck_dh = values(Ck_dh),
+        Warehouse = values(Warehouse),
+        Person = values(Person),
+        Y_dh = values(Y_dh),
+        Wl_dh = values(Wl_dh),
+        Sj_bm = values(Sj_bm),
+        Goods_bm = values(Goods_bm),
+        Goods_name = values(Goods_name),
+        Brand = values(Brand),
+        Num = values(Num),
+        Ck_hw = values(Ck_hw),
+        Price = values(Price),
+        Hj_je = values(Hj_je),
+        Cost_price = values(Cost_price),
+        Cost = values(Cost),
+        Ck_datetime = values(Ck_datetime),
+        Date_time = values(Date_time)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update Wdt_ckmx
+        <set>
+            <if test="ckDh != null and ckDh != ''">
+                Ck_dh = #{ckDh},
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                Warehouse = #{warehouse},
+            </if>
+            <if test="person != null and person != ''">
+                Person = #{person},
+            </if>
+            <if test="yDh != null and yDh != ''">
+                Y_dh = #{yDh},
+            </if>
+            <if test="wlDh != null and wlDh != ''">
+                Wl_dh = #{wlDh},
+            </if>
+            <if test="sjBm != null and sjBm != ''">
+                Sj_bm = #{sjBm},
+            </if>
+            <if test="goodsBm != null and goodsBm != ''">
+                Goods_bm = #{goodsBm},
+            </if>
+            <if test="goodsName != null and goodsName != ''">
+                Goods_name = #{goodsName},
+            </if>
+            <if test="brand != null and brand != ''">
+                Brand = #{brand},
+            </if>
+            <if test="num != null">
+                Num = #{num},
+            </if>
+            <if test="ckHw != null and ckHw != ''">
+                Ck_hw = #{ckHw},
+            </if>
+            <if test="price != null">
+                Price = #{price},
+            </if>
+            <if test="hjJe != null">
+                Hj_je = #{hjJe},
+            </if>
+            <if test="costPrice != null">
+                Cost_price = #{costPrice},
+            </if>
+            <if test="cost != null">
+                Cost = #{cost},
+            </if>
+            <if test="ckDatetime != null">
+                Ck_datetime = #{ckDatetime},
+            </if>
+            <if test="dateTime != null">
+                Date_time = #{dateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from Wdt_ckmx where id = #{id}
+    </delete>
+
+</mapper>
+

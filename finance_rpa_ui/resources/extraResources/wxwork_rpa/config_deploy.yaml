@@ -1,0 +1,38 @@
+# 是否直接从抄送页开始 1:逐步跳转到"抄送我的"页 2:直接从"抄送我的"页开始
+SWITCH_MODE: 2
+
+# 模板图路径
+#DIR_TEMPLATE: C:\workspace\debug_data\finance-wxwork
+DIR_TEMPLATE: resources\extraResources\wxwork_rpa\templates
+
+# 状态栏图标
+FILE_STATUSBAR_WXWORK: wxwork-template01.png
+# 工作台（选中）
+FILE_WXWORK_WORKBENCH_1: wxwork-workbench-selected.png
+# 工作台（未选中）
+FILE_WXWORK_WORKBENCH_0: wxwork-workbench-not-selected.png
+
+# 工作台--审批图标
+FILE_WXWORK_WORKBENCH_EXAMINE: wxwork-workbench-examine.png
+
+# 工作台--审批--我审批的（选中）
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_1: wxwork-workbench-examine-tabmy-selected.png
+# 工作台--审批--我审批的（未选中）
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_0: wxwork-workbench-examine-tabmy-not-selected.png
+
+# 工作台--审批--我审批的--抄送我的（选中）
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_COPY_1: wxwork-workbench-examine-tabmy-copy-selected.png
+# 工作台--审批--我审批的--抄送我的（未选中）
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_COPY_0: wxwork-workbench-examine-tabmy-copy-not-selected.png
+
+# 工作台--审批--我审批的--抄送我的--提交日期
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_COPY_DATEPICKER: wxwork-workbench-examine-tabmy-copy-datePicker.png
+
+# 工作台--审批--我审批的--抄送我的--提交日期--近7日
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_COPY_DATEPICKER_7DAYS: wxwork-workbench-examine-tabmy-copy-datePicker-7days.png
+
+# 工作台--审批--我审批的--抄送我的--已通过
+FILE_WXWORK_WORKBENCH_EXAMINE_TABMY_COPY_PASS: wxwork-workbench-examine-tabmy-copy-pass.png
+
+# 审批单--单据详情
+FILE_WXWORK_EXAM_DETAIL: wxwork-exam-detail.png

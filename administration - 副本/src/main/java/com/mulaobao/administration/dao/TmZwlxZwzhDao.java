@@ -1,0 +1,34 @@
+package com.mulaobao.administration.dao;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.mulaobao.administration.entity.TmZwlxZwzh;
+import com.mulaobao.administration.temporary.*;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+
+/**
+ * (TmZwlxZwzh)表数据库访问层
+ *
+ * @author makejava
+ * @since 2022-01-12 10:48:05
+ */
+@Mapper
+public interface TmZwlxZwzhDao extends BaseMapper<TmZwlxZwzh> {
+    @Select("exec proc_TM_Zwlx #{shops},#{data1},#{data2}")
+    List<TmCwd> gets(@Param("shops") String shops, @Param("data1") String data1, @Param("data2") String data2);
+
+    @Select("exec proc_TM_Zwlxdqr #{shops},#{data1},#{data2}")
+    List<TmCwd2> gets2(@Param("shops") String shops, @Param("data1") String data1, @Param("data2") String data2);
+
+    @Select("exec proc_TM_Zwlx_Yszk #{shops},#{data1},#{data2}")
+    List<Dpckjs> gets4(@Param("shops") String shops, @Param("data1") String data1, @Param("data2") String data2);
+
+    @Select("exec proc_TM_Zwlx_Yszkwjs #{shops},#{data1},#{data2}")
+    List<Dpckwjs> gets5(@Param("shops") String shops, @Param("data1") String data1, @Param("data2") String data2);
+
+
+}
+

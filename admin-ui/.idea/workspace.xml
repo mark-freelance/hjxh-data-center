@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d25434c-35e4-464d-914d-4085f968b08d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/box.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/demo-1-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/tp1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/tp6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/config.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/elementui.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mian.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/menus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/console/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/system/finance/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache\localhostRepository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\apache\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1yDGOModW7fgZCZX55Z8Vpq3M8a" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>SecurityJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1622223337730" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vue-admin-better-master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="D:\IntelliJ IDEA\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\admin\admin-ui\src\assets\img" />
+      <recent name="D:\admin\admin-ui\public" />
+      <recent name="D:\html\admin-ui\src\views" />
+      <recent name="D:\html\admin-ui\src" />
+      <recent name="D:\html\admin-ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\admin\admin-ui\src\views\system" />
+      <recent name="D:\html\admin-ui\src" />
+      <recent name="D:\html\admin-ui\src\views" />
+      <recent name="D:\html\admin-ui" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d25434c-35e4-464d-914d-4085f968b08d" name="Default Changelist" comment="" />
+      <created>1621264635424</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621264635424</updated>
+      <workItem from="1621264636790" duration="4129000" />
+      <workItem from="1621301355172" duration="776000" />
+      <workItem from="1621336407093" duration="1644000" />
+      <workItem from="1621340343657" duration="501000" />
+      <workItem from="1621353968799" duration="1893000" />
+      <workItem from="1621384187324" duration="9431000" />
+      <workItem from="1621413440443" duration="6566000" />
+      <workItem from="1621762063602" duration="26000" />
+      <workItem from="1621772606477" duration="1243000" />
+      <workItem from="1621993492841" duration="27195000" />
+      <workItem from="1622079266213" duration="2540000" />
+      <workItem from="1622088736901" duration="544000" />
+      <workItem from="1622096131473" duration="1798000" />
+      <workItem from="1622164642562" duration="13169000" />
+      <workItem from="1622205516074" duration="9420000" />
+      <workItem from="1622270999390" duration="8567000" />
+      <workItem from="1631778713303" duration="2373000" />
+      <workItem from="1631781673117" duration="2567000" />
+      <workItem from="1631786266639" duration="594000" />
+      <workItem from="1631841599067" duration="1273000" />
+      <workItem from="1631844893689" duration="12014000" />
+      <workItem from="1631927263248" duration="8678000" />
+      <workItem from="1632272895229" duration="18403000" />
+      <workItem from="1632360138937" duration="9279000" />
+      <workItem from="1632447809410" duration="23577000" />
+      <workItem from="1632534968659" duration="57303000" />
+      <workItem from="1632880643678" duration="20263000" />
+      <workItem from="1633483081629" duration="1674000" />
+      <workItem from="1633499030018" duration="53454000" />
+      <workItem from="1634193260689" duration="1145000" />
+      <workItem from="1634195137761" duration="887000" />
+      <workItem from="1634197377840" duration="15000" />
+      <workItem from="1634197433181" duration="29000" />
+      <workItem from="1634197497435" duration="66000" />
+      <workItem from="1634197604034" duration="1676000" />
+      <workItem from="1634199321443" duration="1644000" />
+      <workItem from="1634263452419" duration="53112000" />
+      <workItem from="1635232817202" duration="14235000" />
+      <workItem from="1635484505870" duration="8759000" />
+      <workItem from="1635647161837" duration="10611000" />
+      <workItem from="1635756627216" duration="43073000" />
+      <workItem from="1636435272954" duration="45620000" />
+      <workItem from="1636967957944" duration="3184000" />
+      <workItem from="1637463072628" duration="807000" />
+      <workItem from="1637895869768" duration="93000" />
+      <workItem from="1637896119710" duration="101000" />
+      <workItem from="1637896452173" duration="218000" />
+      <workItem from="1637896727621" duration="35000" />
+      <workItem from="1637896783174" duration="37000" />
+      <workItem from="1637896860470" duration="287000" />
+      <workItem from="1637897727036" duration="87000" />
+      <workItem from="1637898290316" duration="29000" />
+      <workItem from="1637898344669" duration="82000" />
+      <workItem from="1637898446715" duration="168000" />
+      <workItem from="1637898640864" duration="29949000" />
+      <workItem from="1638434440033" duration="12149000" />
+      <workItem from="1638756096694" duration="3906000" />
+      <workItem from="1638842995680" duration="5661000" />
+      <workItem from="1638935140357" duration="1262000" />
+      <workItem from="1638944888489" duration="7557000" />
+      <workItem from="1639384497433" duration="1870000" />
+      <workItem from="1639387962369" duration="1537000" />
+      <workItem from="1639537228777" duration="1414000" />
+      <workItem from="1639620143509" duration="715000" />
+      <workItem from="1639644678002" duration="736000" />
+      <workItem from="1639707190914" duration="21905000" />
+      <workItem from="1640488979860" duration="7752000" />
+      <workItem from="1640669511840" duration="8796000" />
+      <workItem from="1640746573948" duration="1090000" />
+      <workItem from="1640752319225" duration="3729000" />
+      <workItem from="1640767217629" duration="3994000" />
+      <workItem from="1640830934729" duration="5201000" />
+      <workItem from="1640921699709" duration="1223000" />
+      <workItem from="1641263846456" duration="2618000" />
+      <workItem from="1641355290802" duration="947000" />
+      <workItem from="1641372290526" duration="761000" />
+      <workItem from="1641433028770" duration="8049000" />
+      <workItem from="1641789447981" duration="31712000" />
+      <workItem from="1641966220919" duration="18019000" />
+      <workItem from="1642141515004" duration="10236000" />
+      <workItem from="1642484123295" duration="3800000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1642387920590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1642387920590" />
+    <state width="1877" height="114" key="GridCell.Tab.0.bottom" timestamp="1642492961364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="114" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1642492961364" />
+    <state width="1877" height="114" key="GridCell.Tab.0.center" timestamp="1642492961364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="114" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1642492961364" />
+    <state width="1877" height="114" key="GridCell.Tab.0.left" timestamp="1642492961364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="114" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1642492961364" />
+    <state width="1877" height="114" key="GridCell.Tab.0.right" timestamp="1642492961364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="114" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1642492961364" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.2.bottom" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.2.center" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.2.left" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.2.right" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.3.bottom" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.3.center" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.3.left" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state width="1877" height="338" key="GridCell.Tab.3.right" timestamp="1641800910085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1641800910085" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1634799328105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634799328105" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1636437217701">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636437217701" />
+  </component>
+</project>

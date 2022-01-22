@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.LsAchievementsDao">
+
+    <resultMap type="com.mulaobao.administration.entity.LsAchievements" id="LsAchievementsMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="jxDatetime" column="Jx_datetime" jdbcType="VARCHAR"/>
+        <result property="personBh" column="Person_bh" jdbcType="VARCHAR"/>
+        <result property="mbxse" column="mbxse" jdbcType="NUMERIC"/>
+        <result property="sqfxb" column="sqfxb" jdbcType="NUMERIC"/>
+        <result property="wcxse" column="wcxse" jdbcType="NUMERIC"/>
+        <result property="wcl" column="wcl" jdbcType="NUMERIC"/>
+        <result property="bqfxb" column="bqfxb" jdbcType="NUMERIC"/>
+        <result property="fz" column="fz" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="LsAchievementsMap">
+        select
+          id, Jx_datetime, Person_bh, mbxse, sqfxb, wcxse, wcl, bqfxb
+        from LS_Achievements
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="LsAchievementsMap">
+        select
+          id, Jx_datetime, Person_bh, mbxse, sqfxb, wcxse, wcl, bqfxb
+        from LS_Achievements
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="jxDatetime != null and jxDatetime != ''">
+                and Jx_datetime = #{jxDatetime}
+            </if>
+            <if test="personBh != null and personBh != ''">
+                and Person_bh = #{personBh}
+            </if>
+            <if test="mbxse != null">
+                and mbxse = #{mbxse}
+            </if>
+            <if test="sqfxb != null">
+                and sqfxb = #{sqfxb}
+            </if>
+            <if test="wcxse != null">
+                and wcxse = #{wcxse}
+            </if>
+            <if test="wcl != null">
+                and wcl = #{wcl}
+            </if>
+            <if test="bqfxb != null">
+                and bqfxb = #{bqfxb}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from LS_Achievements
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="jxDatetime != null and jxDatetime != ''">
+                and Jx_datetime = #{jxDatetime}
+            </if>
+            <if test="personBh != null and personBh != ''">
+                and Person_bh = #{personBh}
+            </if>
+            <if test="mbxse != null">
+                and mbxse = #{mbxse}
+            </if>
+            <if test="sqfxb != null">
+                and sqfxb = #{sqfxb}
+            </if>
+            <if test="wcxse != null">
+                and wcxse = #{wcxse}
+            </if>
+            <if test="wcl != null">
+                and wcl = #{wcl}
+            </if>
+            <if test="bqfxb != null">
+                and bqfxb = #{bqfxb}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Achievements(Jx_datetime, Person_bh, mbxse, sqfxb, wcxse, wcl, bqfxb)
+        values (#{jxDatetime}, #{personBh}, #{mbxse}, #{sqfxb}, #{wcxse}, #{wcl}, #{bqfxb})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Achievements(Jx_datetime, Person_bh, mbxse, sqfxb, wcxse, wcl, bqfxb)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.jxDatetime}, #{entity.personBh}, #{entity.mbxse}, #{entity.sqfxb}, #{entity.wcxse}, #{entity.wcl}, #{entity.bqfxb})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Achievements(Jx_datetime, Person_bh, mbxse, sqfxb, wcxse, wcl, bqfxb)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.jxDatetime}, #{entity.personBh}, #{entity.mbxse}, #{entity.sqfxb}, #{entity.wcxse}, #{entity.wcl}, #{entity.bqfxb})
+        </foreach>
+        on duplicate key update
+        Jx_datetime = values(Jx_datetime),
+        Person_bh = values(Person_bh),
+        mbxse = values(mbxse),
+        sqfxb = values(sqfxb),
+        wcxse = values(wcxse),
+        wcl = values(wcl),
+        bqfxb = values(bqfxb)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update LS_Achievements
+        <set>
+            <if test="jxDatetime != null and jxDatetime != ''">
+                Jx_datetime = #{jxDatetime},
+            </if>
+            <if test="personBh != null and personBh != ''">
+                Person_bh = #{personBh},
+            </if>
+            <if test="mbxse != null">
+                mbxse = #{mbxse},
+            </if>
+            <if test="sqfxb != null">
+                sqfxb = #{sqfxb},
+            </if>
+            <if test="wcxse != null">
+                wcxse = #{wcxse},
+            </if>
+            <if test="wcl != null">
+                wcl = #{wcl},
+            </if>
+            <if test="bqfxb != null">
+                bqfxb = #{bqfxb},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from LS_Achievements where id = #{id}
+    </delete>
+
+
+
+    <select id="addDep" resultMap="LsAchievementsMap" statementType="CALLABLE">
+        exec proc_Achievements #{date}
+    </select>
+
+</mapper>
+
