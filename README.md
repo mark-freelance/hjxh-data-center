@@ -1,39 +1,32 @@
-# hjxh
+# HjxhDataCenterProject
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+## 待办
 
-#### 软件架构
-软件架构说明
+### TODO: 项目规范化
 
+1. 所有子模块重命名（英文、明确、语义化），重新组合，生成tree
+2. 制作项目流程图
+3. 实现本地开发启动（除了内网，加一个dev环境的localhost运行模式）
+4. 实现脚本一键启动整个项目
+5. \* 支持windows/mac
 
-#### 安装教程
+## 项目背景
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+该项目为皇家小虎内部数据平台搭建项目，源代码来自于：https://gitee.com/laige123/hjxh 
 
-#### 使用说明
+针对原项目，经过测试，大部分模块、组件都能正常运行，目前有以下比较明显的问题：
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 项目结构与模块命名不够清晰，没有相应文档。例如：
+    1. `adminui`与`adminui1`会让人以为是同一个模块，实际上是分别服务于运营、财务
+    2. `administration`与`administration副本`之间的关系不明等等
+2. 模块之间的协同运行，最好要加一个整合脚本，方便一键运行，目前模块比较分散，启动效率明显不够
+3. 项目本身的运行，可能存在bug、设计缺陷或需要文档支持。例如：
+    1. 某前端模块，需要`node`版本为`14`，`npm`版本为6，这些信息可能开发者自己也不知道，但对于项目的维护是很有必要的
+    2. 前后端模块都未针对本地化dev环境开发做分支处理，但这些都是很必要的，只有在本地测试通过之后才方便集成到prod环境，再上线
+    3. 项目的很多地方命名是根据拼音来的，模糊不准确，有必要使用语义更明确的命名方式
+    4. 后端模块的一些表设计等，可能还存在一定问题，需要进一步调试
+    5. 爬虫模块的项目结构需要优化，集成方式也有待优化（直接塞`resources`的方式有必要改进）
+4. 部分模块的运行效果需要进一步进行内网测试，这里暂时无法做出评估
+5. 其他。
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+基于以上的一些问题，特新开项目，统一管理，并后续基于该项目进行协同开发。

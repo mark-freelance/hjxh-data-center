@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Mapper
 public interface LsEmployeeDao extends BaseMapper<LsEmployee> {
-        List<LsEmployee> listLsEmployee();
+
+	List<LsEmployee> listLsEmployee();
 }
 

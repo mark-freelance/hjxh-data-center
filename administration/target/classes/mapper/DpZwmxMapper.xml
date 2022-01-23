@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.DpZwmxDao">
+
+    <resultMap type="com.mulaobao.administration.entity.DpZwmx" id="DpZwmxMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="shopBh" column="Shop_bh" jdbcType="VARCHAR"/>
+        <result property="shDdh" column="Sh_ddh" jdbcType="VARCHAR"/>
+        <result property="fsDatetime" column="Fs_datetime" jdbcType="TIMESTAMP"/>
+        <result property="srJe" column="Sr_je" jdbcType="NUMERIC"/>
+        <result property="zcJe" column="Zc_je" jdbcType="NUMERIC"/>
+        <result property="zwLx" column="Zw_lx" jdbcType="VARCHAR"/>
+        <result property="bz" column="Bz" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="DpZwmxMap">
+        select
+          id, Shop_bh, Sh_ddh, Fs_datetime, Sr_je, Zc_je, Zw_lx, Bz
+        from DP_Zwmx
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="DpZwmxMap">
+        select
+          id, Shop_bh, Sh_ddh, Fs_datetime, Sr_je, Zc_je, Zw_lx, Bz
+        from DP_Zwmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                and Sh_ddh = #{shDdh}
+            </if>
+            <if test="fsDatetime != null">
+                and Fs_datetime = #{fsDatetime}
+            </if>
+            <if test="srJe != null">
+                and Sr_je = #{srJe}
+            </if>
+            <if test="zcJe != null">
+                and Zc_je = #{zcJe}
+            </if>
+            <if test="zwLx != null and zwLx != ''">
+                and Zw_lx = #{zwLx}
+            </if>
+            <if test="bz != null and bz != ''">
+                and Bz = #{bz}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from DP_Zwmx
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                and Sh_ddh = #{shDdh}
+            </if>
+            <if test="fsDatetime != null">
+                and Fs_datetime = #{fsDatetime}
+            </if>
+            <if test="srJe != null">
+                and Sr_je = #{srJe}
+            </if>
+            <if test="zcJe != null">
+                and Zc_je = #{zcJe}
+            </if>
+            <if test="zwLx != null and zwLx != ''">
+                and Zw_lx = #{zwLx}
+            </if>
+            <if test="bz != null and bz != ''">
+                and Bz = #{bz}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into DP_Zwmx(id,Shop_bh, Sh_ddh, Fs_datetime, Sr_je, Zc_je, Zw_lx, Bz)
+        values (#{id},#{shopBh}, #{shDdh}, #{fsDatetime}, #{srJe}, #{zcJe}, #{zwLx}, #{bz})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into DP_Zwmx(id,Shop_bh, Sh_ddh, Fs_datetime, Sr_je, Zc_je, Zw_lx, Bz)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id},#{entity.shopBh}, #{entity.shDdh}, #{entity.fsDatetime}, #{entity.srJe}, #{entity.zcJe}, #{entity.zwLx}, #{entity.bz})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into DP_Zwmx(Shop_bh, Sh_ddh, Fs_datetime, Sr_je, Zc_je, Zw_lx, Bz)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.shopBh}, #{entity.shDdh}, #{entity.fsDatetime}, #{entity.srJe}, #{entity.zcJe}, #{entity.zwLx}, #{entity.bz})
+        </foreach>
+        on duplicate key update
+        Shop_bh = values(Shop_bh),
+        Sh_ddh = values(Sh_ddh),
+        Fs_datetime = values(Fs_datetime),
+        Sr_je = values(Sr_je),
+        Zc_je = values(Zc_je),
+        Zw_lx = values(Zw_lx),
+        Bz = values(Bz)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update DP_Zwmx
+        <set>
+            <if test="shopBh != null and shopBh != ''">
+                Shop_bh = #{shopBh},
+            </if>
+            <if test="shDdh != null and shDdh != ''">
+                Sh_ddh = #{shDdh},
+            </if>
+            <if test="fsDatetime != null">
+                Fs_datetime = #{fsDatetime},
+            </if>
+            <if test="srJe != null">
+                Sr_je = #{srJe},
+            </if>
+            <if test="zcJe != null">
+                Zc_je = #{zcJe},
+            </if>
+            <if test="zwLx != null and zwLx != ''">
+                Zw_lx = #{zwLx},
+            </if>
+            <if test="bz != null and bz != ''">
+                Bz = #{bz},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from DP_Zwmx where id = #{id}
+    </delete>
+
+</mapper>
+

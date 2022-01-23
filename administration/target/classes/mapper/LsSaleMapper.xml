@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.LsSaleDao">
+
+    <resultMap type="com.mulaobao.administration.entity.LsSale" id="LsSaleMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="platformBh" column="Platform_bh" jdbcType="VARCHAR"/>
+        <result property="shopBh" column="Shop_bh" jdbcType="VARCHAR"/>
+        <result property="dateTime" column="Date_time" jdbcType="TIMESTAMP"/>
+        <result property="sales" column="Sales" jdbcType="NUMERIC"/>
+        <result property="orderquantity" column="OrderQuantity" jdbcType="NUMERIC"/>
+        <result property="numBuyers" column="Num_Buyers" jdbcType="NUMERIC"/>
+        <result property="refundamount" column="RefundAmount" jdbcType="NUMERIC"/>
+        <result property="refundrate" column="RefundRate" jdbcType="NUMERIC"/>
+        <result property="actualsales" column="ActualSales" jdbcType="NUMERIC"/>
+        <result property="paymentrate" column="PaymentRate" jdbcType="NUMERIC"/>
+        <result property="customerprice" column="CustomerPrice" jdbcType="NUMERIC"/>
+        <result property="totaltraffic" column="TotalTraffic" jdbcType="NUMERIC"/>
+        <result property="freetraffic" column="FreeTraffic" jdbcType="NUMERIC"/>
+        <result property="freetrafficzb" column="FreeTrafficzb" jdbcType="NUMERIC"/>
+        <result property="moresearchll" column="MoreSearchll" jdbcType="NUMERIC"/>
+        <result property="manyscenesll" column="ManyScenesll" jdbcType="NUMERIC"/>
+        <result property="restassuredpushll" column="RestAssuredPushll" jdbcType="NUMERIC"/>
+        <result property="taokepromotionll" column="TaokePromotionll" jdbcType="NUMERIC"/>
+        <result property="aipromotionll" column="AIPromotionll" jdbcType="NUMERIC"/>
+        <result property="pinxiaobaoll" column="Pinxiaobaoll" jdbcType="NUMERIC"/>
+        <result property="promotionflow" column="PromotionFlow" jdbcType="NUMERIC"/>
+        <result property="promotionflowzb" column="PromotionFlowzb" jdbcType="NUMERIC"/>
+        <result property="moresearchfy" column="MoreSearchfy" jdbcType="NUMERIC"/>
+        <result property="manyscenesfy" column="ManyScenesfy" jdbcType="NUMERIC"/>
+        <result property="restassuredpushfy" column="RestAssuredPushfy" jdbcType="NUMERIC"/>
+        <result property="taokepromotionfy" column="TaokePromotionfy" jdbcType="NUMERIC"/>
+        <result property="aipromotionfy" column="AIPromotionfy" jdbcType="NUMERIC"/>
+        <result property="pinxiaobaofy" column="Pinxiaobaofy" jdbcType="NUMERIC"/>
+        <result property="promotioncost" column="PromotionCost" jdbcType="NUMERIC"/>
+        <result property="promotioncostzb" column="PromotionCostzb" jdbcType="NUMERIC"/>
+        <result property="platformbuckle" column="PlatformBuckle" jdbcType="NUMERIC"/>
+        <result property="otherexpenses" column="OtherExpenses" jdbcType="NUMERIC"/>
+        <result property="totalcost" column="TotalCost" jdbcType="NUMERIC"/>
+        <result property="costratio" column="CostRatio" jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <!--拼多多-->
+    <select id="pddlists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        null as Sales , -- 全店销售额
+        null as OrderQuantity , --订单量
+        null Num_Buyers,--支付买家数
+        null as RefundAmount,--退款金额
+        null as TotalTraffic , --店铺总流量
+        a1.MoreSearchll,--搜索流量
+        a2.ManyScenesll,--场景流量
+        null as RestAssuredPushll , --放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        a1.MoreSearchfy,--搜索费用
+        a2.ManyScenesfy ,--场景费用
+        a3.RestAssuredPushfy , --放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses --其他费用
+        from
+        --搜索推广
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time,
+        sum(Hits) MoreSearchll , sum(Spend) MoreSearchfy
+        FROM PDD_sstg a1 where  a1.shop_bh=#{shop}
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a1
+        --场景推广
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits) ManyScenesll ,sum(Spend) ManyScenesfy
+        FROM PDD_cjtg a1  where a1.shop_bh=#{shop}
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a2 on a1.PlatForm_bh=a2.PlatForm_bh and a1.Shop_bh=a2.Shop_bh and  a1.date_time=a2.date_time
+        LEFT JOIN
+        (
+        SELECT
+        a3.PlatForm_bh,
+        a3.Shop_bh,
+        a3.Date_Time,
+        sum(Spend) AS RestAssuredPushfy
+        FROM PDD_fxt a3
+        where a3.shop_bh=#{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a3.PlatForm_bh,a3.Shop_bh,a3.Date_Time
+        ) a3 on a1.platform_bh=a3.platform_bh and a1.Shop_bh=a3.Shop_bh and a1.date_time=a3.date_time
+        order by a1.date_time
+    </select>
+
+
+    <!--拼多多1-->
+    <select id="pddlists1" resultMap="LsSaleMap">
+        select a2.PlatForm_bh ,a2.Shop_bh ,a2.Date_time ,
+        null as Sales , -- 全店销售额
+        null as OrderQuantity , --订单量
+        null Num_Buyers,--支付买家数
+        null as RefundAmount,--退款金额
+        null as TotalTraffic , --店铺总流量
+        a2.ManyScenesll,--场景流量
+        a2.ManyScenesfy ,--场景费用
+        null as OtherExpenses --其他费用
+        from
+        --搜索推广
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits) ManyScenesll ,sum(Spend) ManyScenesfy
+        FROM PDD_cjtg a1 where a1.shop_bh=#{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a2
+
+    </select>
+
+    <!--拼多多-->
+    <select id="pddlists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        null as Sales , -- 全店销售额
+        null as OrderQuantity , --订单量
+        null Num_Buyers,--支付买家数
+        null as RefundAmount,--退款金额
+        null as TotalTraffic , --店铺总流量
+        a1.MoreSearchll,--搜索流量
+        a2.ManyScenesll,--场景流量
+        null as RestAssuredPushll , --放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        a1.MoreSearchfy,--搜索费用
+        a2.ManyScenesfy ,--场景费用
+        a3.RestAssuredPushfy , --放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses --其他费用
+        from
+        --搜索推广
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time,
+        sum(Hits) MoreSearchll , sum(Spend) MoreSearchfy
+        FROM PDD_sstg a1 where  a1.shop_bh=#{shop}
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a1
+        --场景推广
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits) ManyScenesll ,sum(Spend) ManyScenesfy
+        FROM PDD_cjtg a1  where a1.shop_bh=#{shop}
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a2 on a1.PlatForm_bh=a2.PlatForm_bh and a1.Shop_bh=a2.Shop_bh and  a1.date_time=a2.date_time
+        LEFT JOIN
+        (
+        SELECT
+        a3.PlatForm_bh,
+        a3.Shop_bh,
+        a3.Date_Time,
+        sum(Spend) AS RestAssuredPushfy
+        FROM PDD_fxt a3
+        where a3.shop_bh=#{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a3.PlatForm_bh,a3.Shop_bh,a3.Date_Time
+        ) a3 on a1.platform_bh=a3.platform_bh and a1.Shop_bh=a3.Shop_bh and a1.date_time=a3.date_time
+        order by a1.date_time
+    </select>
+
+
+    <!--天猫-->
+    <select id="tmlists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        a1.Sales , -- 全店销售额
+        a1.OrderQuantity, -- 订单量
+        a1.Num_Buyers, --支付买家数
+        a1.RefundAmount , -- 退款金额
+        (isnull(a1.Sales,0)-a1.RefundAmount) as ActualSales , -- 实际销售额
+        a1.PaymentRate ,--支付转化率
+        -- round((isnull(a1.Sales,0)/a1.Num_Buyers),2) as CustomerPrice , --客单价
+        a1.TotalTraffic ,--店铺总流量
+        a3.MoreSearchll, --直通车流量
+        a2.ManyScenesll, --场景推广流量
+        a5.RestAssuredPushll, --超级钻展流量
+        a7.TaokePromotionll, --淘客推广流量
+        a6.AIPromotionll, --AI推广流量
+        a4.Pinxiaobaoll, --品销宝流量
+        a3.MoreSearchfy, --直通车费用
+        a2.ManyScenesfy, --场景推广费用
+        a5.RestAssuredPushfy, --超级钻展费用
+        a7.TaokePromotionfy, --淘客推广费用
+        a6.AIPromotionfy, --AI推广费用
+        a4.Pinxiaobaofy, --品销宝费用
+        Cast(null as decimal(17,2)) OtherExpenses --其他费用
+        from
+        --直通车
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        a1.Refund_je as RefundAmount,a1.Payment_je as Sales,
+        a1.Payment_num as OrderQuantity,a1.Visitor_num as TotalTraffic,
+        a1.Paybuy_num as Num_Buyers,a1.Payment_rate as PaymentRate
+        FROM TM_Xssj a1 where a1.shop_bh = #{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        ) a1
+        --超级推荐
+        left JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits_num) ManyScenesll ,sum(Consume) ManyScenesfy
+        FROM TM_Cjtj a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a2 on a1.PlatForm_bh=a2.PlatForm_bh and a1.Shop_bh=a2.Shop_bh  and a1.date_time = a2.date_time
+        --销售数据
+        left join
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        sum(Hits_num) MoreSearchll , sum(Spend) MoreSearchfy
+        FROM TM_Ztc a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a3 on a1.PlatForm_bh=a3.PlatForm_bh and a1.Shop_bh=a3.Shop_bh and a1.date_time = a3.date_time
+        --品销宝
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        Hits_num as Pinxiaobaoll ,Consume as Pinxiaobaofy
+        FROM TM_Pxb a1
+        ) a4 on a1.PlatForm_bh=a4.PlatForm_bh and a1.Shop_bh=a4.Shop_bh and a1.date_time = a4.date_time
+        --超级钻展
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits_num) RestAssuredPushll ,sum(Consume) RestAssuredPushfy
+        FROM TM_Cjzz a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a5 on a1.PlatForm_bh=a5.PlatForm_bh and a1.Shop_bh=a5.Shop_bh  and a1.date_time = a5.date_time
+        --AI推广
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits_num) AIPromotionll ,sum(Consume) AIPromotionfy
+        FROM TM_Aitg a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a6 on a1.PlatForm_bh=a6.PlatForm_bh and a1.Shop_bh=a6.Shop_bh and a1.date_time = a6.date_time
+        --淘客推广
+        LEFT JOIN
+        (
+        SELECT a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time,
+        sum(Hits_num) TaokePromotionll ,sum(Zc_je) TaokePromotionfy
+        FROM TM_Tktg a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a7 on a1.PlatForm_bh=a7.PlatForm_bh and a1.Shop_bh=a7.Shop_bh and a1.date_time = a7.date_time
+    </select>
+
+
+
+    <!--京东-->
+    <select id="jdlists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        a1.Sales, --全店销售额
+        a1.OrderQuantity, --订单量
+        a1.Num_Buyers, --支付买家数
+        null as RefundAmount,--退款金额
+        a1.PaymentRate, --支付转化率
+        a1.CustomerPrice, --客单价
+        a1.TotalTraffic, --店铺总流量
+        a4.MoreSearchll,--多多搜索/直通车/京东快车（流量）
+        a2.ManyScenesll,--多多场景/超级推荐/京东展位（流量）
+        a3.RestAssuredPushll,--放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        a4.MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+        a2.ManyScenesfy,--多多场景/超级推荐/京东展位(费用)
+        a3.RestAssuredPushfy,--放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses --其他费用
+        from
+        --京速推
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        Vis_num as TotalTraffic,
+        Deal_khs as Num_Buyers,
+        Deal_je as Sales,
+        CustomerPrice,
+        Dealsp_num as OrderQuantity,
+        Deal_rate as PaymentRate
+        FROM JD_Xssj a1 where a1.shop_bh = #{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        ) a1
+        --销售数据
+        left join
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        sum(Hits_num) ManyScenesll , sum(Total_cost) ManyScenesfy
+        FROM JD_Jst a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a2 on a1.PlatForm_bh=a2.PlatForm_bh and a1.Shop_bh=a2.Shop_bh and a1.date_time = a2.date_time
+        --购物触点
+        left join
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        Hits_num as RestAssuredPushll, Total_cost as RestAssuredPushfy
+        FROM JD_Gwcd a1
+        ) a3 on a1.PlatForm_bh=a3.PlatForm_bh and a1.Shop_bh=a3.Shop_bh and a1.date_time = a3.date_time
+        --京东快车
+        left join
+        (
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        sum(Hits_num) MoreSearchll , sum(Total_cost) MoreSearchfy
+        FROM JD_jdkc a1
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a4 on a1.PlatForm_bh=a4.PlatForm_bh and a1.Shop_bh=a4.Shop_bh and a1.date_time = a4.date_time
+    </select>
+
+    <!--其他-->
+    <select id="qtlists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh,a1.Shop_bh,a1.Date_time,
+        a1.Sales,--全店销售额
+        a1.OrderQuantity,--订单量
+        null as Num_Buyers,--支付买家数
+        null as RefundAmount,--退款金额
+        null as ActualSales,--实际销售额
+        null as TotalTraffic,--店铺总流量
+        null as MoreSearchll,--多多搜索/直通车/京东快车（流量）
+        null as ManyScenesll ,--多多场景/超级推荐/京东展位（流量）
+        null as RestAssuredPushll ,--放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        null as MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+        null as ManyScenesfy ,--多多场景/超级推荐/京东展位(费用)
+        null as RestAssuredPushfy ,--放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        a1.PlatformBuckle,--平台扣点
+        null as OtherExpenses --其他费用
+        from
+        (
+        --多多买菜
+        select a1.PlatForm_bh,a1.Shop_bh,a1.Date_time,
+        sum((Bus_offer*Comm_num)) as Sales,sum(Comm_num) as OrderQuantity,round(sum((Bus_offer*Comm_num))*0.0115,2) as PlatformBuckle
+        from DDMC_Xssj a1 where a1.shop_bh=#{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_time
+        union all
+        --美团优选
+        select a1.PlatForm_bh,a1.Shop_bh,a1.Xs_datetime as Date_time,
+        sum(Loan_je) as Sales,sum(Sale_num) as OrderQuantity,0 as PlatformBuckle
+        from MT_Xssj a1 where a1.shop_bh=#{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Xs_datetime
+        ) a1 order by a1.Date_time
+    </select>
+
+
+    <!--抖音-->
+    <select id="dylists" resultMap="LsSaleMap">
+        select a1.Platform_bh,a1.Shop_bh,a1.Date_time,
+        sum(a1.Tran_je) as Sales,--全店销售额
+        sum(a1.Tran_num) as OrderQuantity,--订单量
+        sum(a1.Tran_rs) as Num_Buyers,--支付买家数
+        sum(a1.Refund_je) as RefundAmount,--退款金额
+        convert(decimal(18,4),isnull(sum(a1.Refund_je)/nullif(sum(a1.Tran_je),0),0)) as Refundrate,--退款率
+        sum(a1.Tran_je)-sum(a1.Refund_je) as ActualSales,--实际销售额
+        null as TotalTraffic,--店铺总流量
+        null as MoreSearchll ,--多多搜索/直通车/京东快车（流量）
+        null as ManyScenesll ,--多多场景/超级推荐/京东展位（流量）
+        null as RestAssuredPushll,--放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        null as MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+        null as ManyScenesfy,--多多场景/超级推荐/京东展位(费用)
+        null as RestAssuredPushfy,--放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses --其他费用
+        from DY_Xssj a1
+        where a1.shop_bh = #{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a1.Platform_bh,a1.Shop_bh,a1.Date_time
+    </select>
+
+    <!--蘑菇街-->
+    <select id="mgjlists" resultMap="LsSaleMap">
+        with tmp_1
+        as (
+        SELECT
+        a1.PlatForm_bh,a1.Shop_bh,a1.Date_time,
+        case ZBMC
+        when '成交金额' then 'Sales'
+        when '成交商品件数' then 'OrderQuantity'
+        when '成交人数' then 'Num_Buyers'
+        when '退货退款金额' then 'RefundAmount'
+        when '成交转化率' then 'PaymentRate'
+        when '客单价' then 'CustomerPrice'
+        when '流量' then 'TotalTraffic'
+        end as ZBMC,DQSJ
+        FROM MGJ_Xssj a1
+        where  a1.shop_bh = #{shop} and
+        ZBMC in ('流量','成交金额','成交人数','成交转化率','客单价','成交商品件数','退货退款金额')
+        )
+        select PlatForm_bh,Shop_bh,Date_time,
+        Sales,--全店销售额
+        OrderQuantity,--订单量
+        Num_Buyers,--支付买家数
+        RefundAmount,--退款金额
+        round((isnull(RefundAmount,0)/Sales),4) as RefundRate,--退款率
+        (isnull(Sales,0)-isnull(RefundAmount,0)) as ActualSales,--实际销售额
+        PaymentRate,--支付转换率
+        CustomerPrice, --客单价
+        TotalTraffic,--店铺总流量
+        null as MoreSearchll ,--多多搜索/直通车/京东快车（流量）
+        null as ManyScenesll ,--多多场景/超级推荐/京东展位（流量）
+        null as RestAssuredPushll,--放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll, --品销宝(流量)
+        null as MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+        null as ManyScenesfy,--多多场景/超级推荐/京东展位(费用)
+        null as RestAssuredPushfy,--放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses
+        from tmp_1 aa
+        PIVOT(sum(DQSJ) FOR ZBMC IN([Sales],[OrderQuantity],[Num_Buyers],[RefundAmount],[PaymentRate],[CustomerPrice],[TotalTraffic])) as T
+    </select>
+
+
+    <!--特价版-->
+    <select id="tjblists" resultMap="LsSaleMap">
+        select a1.PlatForm_bh,a1.Shop_bh,a1.Date_time,
+        null as Sales,--全店销售额
+        null as OrderQuantity,--订单量
+        null as Num_Buyers,--支付买家数
+        null as RefundAmount,--退款金额
+        null as TotalTraffic,--店铺总流量
+        MoreSearchll,--直通车流量
+        null as ManyScenesll ,--多多场景/超级推荐/京东展位（流量）
+        null as RestAssuredPushll ,--放心推/钻石展位/京东直投（流量）
+        null as TaokePromotionll,--淘客推广(流量)
+        null as AIPromotionll,--AI推广(流量)
+        null as Pinxiaobaoll,--品销宝(流量)
+        MoreSearchfy,--直通车费用
+        null as ManyScenesfy ,--多多场景/超级推荐/京东展位(费用)
+        null as RestAssuredPushfy ,--放心推/钻石展位/京东直投(费用)
+        null as TaokePromotionfy,--淘客推广(费用)
+        null as AIPromotionfy,--AI推广(费用)
+        null as Pinxiaobaofy,--品销宝(费用)
+        null as OtherExpenses --其他费用
+        from
+        (
+        --直通车
+        SELECT a1.PlatForm_bh ,a1.Shop_bh ,a1.Date_time ,
+        sum(Hits_num) MoreSearchll , sum(Spend) MoreSearchfy
+        FROM TT_Ztc a1 where shop_bh = #{shop} and (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+        group by a1.PlatForm_bh,a1.Shop_bh,a1.Date_Time
+        ) a1
+    </select>
+
+    <!--总汇总-->
+    <select id="zhzlists" resultMap="LsSaleMap">
+            select
+            '10' as Platform_bh,
+            '10' as Shop_bh,
+            Date_time,
+            sum(Sales) as Sales,--全店销售额
+            sum(OrderQuantity) as OrderQuantity,--订单量
+            sum(Num_Buyers) as Num_Buyers,--支付买家数
+            sum(RefundAmount) as RefundAmount,--退款金额,
+            convert(DECIMAL(18,4),isnull(sum(RefundAmount)/nullif(sum(Sales),0),0)) as RefundRate,--退款率
+            sum(ActualSales) as ActualSales,--实际销售额
+            convert(DECIMAL(18,4),isnull(sum(Num_Buyers)/nullif(sum(TotalTraffic),0),0)) as PaymentRate,--支付转化率
+            sum(CustomerPrice) as CustomerPrice,--客单价
+            sum(TotalTraffic) as TotalTraffic,--店铺总流量
+            sum(FreeTraffic) as FreeTraffic,--免费流量
+            convert(DECIMAL(18,4),isnull(sum(FreeTraffic)/nullif(sum(TotalTraffic),0),0)) as FreeTrafficzb,--免费流量占比
+            sum(MoreSearchll) as MoreSearchll,--多多搜索/直通车/京东快车（流量）
+            sum(ManyScenesll) as ManyScenesll,--多多场景/超级推荐/京东展位（流量）
+            convert(DECIMAL(18,4),isnull(sum(RestAssuredPushll),0),0) as RestAssuredPushll,--放心推/钻石展位/京东直投（流量）
+            sum(TaokePromotionll) as TaokePromotionll,--淘客推广(流量)
+            sum(AIPromotionll) as AIPromotionll,--AI推广(流量)
+            sum(Pinxiaobaoll) as Pinxiaobaoll,--品销宝(流量)
+            sum(PromotionFlow) as PromotionFlow,--推广总流量
+            convert(DECIMAL(18,4),isnull(sum(PromotionFlow)/nullif(sum(TotalTraffic),0),0)) as PromotionFlowzb,--推广流量占比
+            sum(MoreSearchfy) as MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+            sum(ManyScenesfy) as ManyScenesfy,--多多场景/超级推荐/京东展位(费用)
+            sum(RestAssuredPushfy) as RestAssuredPushfy,--放心推/钻石展位/京东直投(费用)
+            sum(TaokePromotionfy) as TaokePromotionfy,--淘客推广(费用)
+            sum(AIPromotionfy) as AIPromotionfy,--AI推广(费用)
+            sum(Pinxiaobaofy) as Pinxiaobaofy,--品销宝(费用)
+            sum(PromotionCost) as PromotionCost,--推广总费用
+            convert(DECIMAL(18,4),isnull(sum(PromotionCost)/nullif(sum(Sales),0),0)) as PromotionCostzb,--推广费用占比
+            sum(PlatformBuckle) as PlatformBuckle,--平台扣点
+            sum(OtherExpenses) as OtherExpenses,--其他费用
+            sum(TotalCost) as TotalCost, --合计总费用
+            convert(DECIMAL(18,4),isnull(sum(TotalCost)/nullif(sum(Sales),0),0)) as CostRatio --费销比
+            from LS_Sale a1 where (CONVERT([varchar](10),Xg_datetime,(120))) = (CONVERT([varchar](10),getdate(),(120)))
+            group by Date_time,Xg_datetime
+    </select>
+
+
+    <!--总汇总-->
+    <select id="xgzhzlists" resultMap="LsSaleMap">
+        select
+        '10' as Platform_bh,
+        '10' as Shop_bh,
+        Date_time,
+        sum(Sales) as Sales,--全店销售额
+        sum(OrderQuantity) as OrderQuantity,--订单量
+        sum(Num_Buyers) as Num_Buyers,--支付买家数
+        sum(RefundAmount) as RefundAmount,--退款金额,
+        convert(DECIMAL(18,4),isnull(sum(RefundAmount)/nullif(sum(Sales),0),0)) as RefundRate,--退款率
+        sum(ActualSales) as ActualSales,--实际销售额
+        convert(DECIMAL(18,4),isnull(sum(Num_Buyers)/nullif(sum(TotalTraffic),0),0)) as PaymentRate,--支付转化率
+        sum(CustomerPrice) as CustomerPrice,--客单价
+        sum(TotalTraffic) as TotalTraffic,--店铺总流量
+        sum(FreeTraffic) as FreeTraffic,--免费流量
+        convert(DECIMAL(18,4),isnull(sum(FreeTraffic)/nullif(sum(TotalTraffic),0),0)) as FreeTrafficzb,--免费流量占比
+        sum(MoreSearchll) as MoreSearchll,--多多搜索/直通车/京东快车（流量）
+        sum(ManyScenesll) as ManyScenesll,--多多场景/超级推荐/京东展位（流量）
+        convert(DECIMAL(18,4),isnull(sum(RestAssuredPushll),0),0) as RestAssuredPushll,--放心推/钻石展位/京东直投（流量）
+        sum(TaokePromotionll) as TaokePromotionll,--淘客推广(流量)
+        sum(AIPromotionll) as AIPromotionll,--AI推广(流量)
+        sum(Pinxiaobaoll) as Pinxiaobaoll,--品销宝(流量)
+        sum(PromotionFlow) as PromotionFlow,--推广总流量
+        convert(DECIMAL(18,4),isnull(sum(PromotionFlow)/nullif(sum(TotalTraffic),0),0)) as PromotionFlowzb,--推广流量占比
+        sum(MoreSearchfy) as MoreSearchfy,--多多搜索/直通车/京东快车(费用)
+        sum(ManyScenesfy) as ManyScenesfy,--多多场景/超级推荐/京东展位(费用)
+        sum(RestAssuredPushfy) as RestAssuredPushfy,--放心推/钻石展位/京东直投(费用)
+        sum(TaokePromotionfy) as TaokePromotionfy,--淘客推广(费用)
+        sum(AIPromotionfy) as AIPromotionfy,--AI推广(费用)
+        sum(Pinxiaobaofy) as Pinxiaobaofy,--品销宝(费用)
+        sum(PromotionCost) as PromotionCost,--推广总费用
+        convert(DECIMAL(18,4),isnull(sum(PromotionCost)/nullif(sum(Sales),0),0)) as PromotionCostzb,--推广费用占比
+        sum(PlatformBuckle) as PlatformBuckle,--平台扣点
+        sum(OtherExpenses) as OtherExpenses,--其他费用
+        sum(TotalCost) as TotalCost, --合计总费用
+        convert(DECIMAL(18,4),isnull(sum(TotalCost)/nullif(sum(Sales),0),0)) as CostRatio --费销比
+        from LS_Sale a1 where Date_time = #{shop} and shop_bh!='10'
+        group by Date_time
+    </select>
+
+    <!--总汇总-->
+    <select id="qitiaolists" resultMap="LsSaleMap">
+        SELECT right(date_time,5) as day1,*
+        FROM LS_Sale
+        where Shop_bh = '10'
+        and (Date_time between dateadd(day,-6,'2021-09-01') and '2021-09-01')
+        order by date_time
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="LsSaleMap">
+        select
+          id, Platform_bh, Shop_bh, Date_time, Sales, OrderQuantity, Num_Buyers, RefundAmount, RefundRate, ActualSales, PaymentRate, CustomerPrice, TotalTraffic, FreeTraffic, FreeTrafficzb, MoreSearchll, ManyScenesll, RestAssuredPushll, TaokePromotionll, AIPromotionll, Pinxiaobaoll, PromotionFlow, PromotionFlowzb, MoreSearchfy, ManyScenesfy, RestAssuredPushfy, TaokePromotionfy, AIPromotionfy, Pinxiaobaofy, PromotionCost, PromotionCostzb, PlatformBuckle, OtherExpenses, TotalCost, CostRatio
+        from LS_Sale
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="platformBh != null and platformBh != ''">
+                and Platform_bh = #{platformBh}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="dateTime != null">
+                and Date_time = #{dateTime}
+            </if>
+            <if test="sales != null">
+                and Sales = #{sales}
+            </if>
+            <if test="orderquantity != null">
+                and OrderQuantity = #{orderquantity}
+            </if>
+            <if test="numBuyers != null">
+                and Num_Buyers = #{numBuyers}
+            </if>
+            <if test="refundamount != null">
+                and RefundAmount = #{refundamount}
+            </if>
+            <if test="refundrate != null">
+                and RefundRate = #{refundrate}
+            </if>
+            <if test="actualsales != null">
+                and ActualSales = #{actualsales}
+            </if>
+            <if test="paymentrate != null">
+                and PaymentRate = #{paymentrate}
+            </if>
+            <if test="customerprice != null">
+                and CustomerPrice = #{customerprice}
+            </if>
+            <if test="totaltraffic != null">
+                and TotalTraffic = #{totaltraffic}
+            </if>
+            <if test="freetraffic != null">
+                and FreeTraffic = #{freetraffic}
+            </if>
+            <if test="freetrafficzb != null">
+                and FreeTrafficzb = #{freetrafficzb}
+            </if>
+            <if test="moresearchll != null">
+                and MoreSearchll = #{moresearchll}
+            </if>
+            <if test="manyscenesll != null">
+                and ManyScenesll = #{manyscenesll}
+            </if>
+            <if test="restassuredpushll != null">
+                and RestAssuredPushll = #{restassuredpushll}
+            </if>
+            <if test="taokepromotionll != null">
+                and TaokePromotionll = #{taokepromotionll}
+            </if>
+            <if test="aipromotionll != null">
+                and AIPromotionll = #{aipromotionll}
+            </if>
+            <if test="pinxiaobaoll != null">
+                and Pinxiaobaoll = #{pinxiaobaoll}
+            </if>
+            <if test="promotionflow != null">
+                and PromotionFlow = #{promotionflow}
+            </if>
+            <if test="promotionflowzb != null">
+                and PromotionFlowzb = #{promotionflowzb}
+            </if>
+            <if test="moresearchfy != null">
+                and MoreSearchfy = #{moresearchfy}
+            </if>
+            <if test="manyscenesfy != null">
+                and ManyScenesfy = #{manyscenesfy}
+            </if>
+            <if test="restassuredpushfy != null">
+                and RestAssuredPushfy = #{restassuredpushfy}
+            </if>
+            <if test="taokepromotionfy != null">
+                and TaokePromotionfy = #{taokepromotionfy}
+            </if>
+            <if test="aipromotionfy != null">
+                and AIPromotionfy = #{aipromotionfy}
+            </if>
+            <if test="pinxiaobaofy != null">
+                and Pinxiaobaofy = #{pinxiaobaofy}
+            </if>
+            <if test="promotioncost != null">
+                and PromotionCost = #{promotioncost}
+            </if>
+            <if test="promotioncostzb != null">
+                and PromotionCostzb = #{promotioncostzb}
+            </if>
+            <if test="platformbuckle != null">
+                and PlatformBuckle = #{platformbuckle}
+            </if>
+            <if test="otherexpenses != null">
+                and OtherExpenses = #{otherexpenses}
+            </if>
+            <if test="totalcost != null">
+                and TotalCost = #{totalcost}
+            </if>
+            <if test="costratio != null">
+                and CostRatio = #{costratio}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from LS_Sale
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="platformBh != null and platformBh != ''">
+                and Platform_bh = #{platformBh}
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                and Shop_bh = #{shopBh}
+            </if>
+            <if test="dateTime != null">
+                and Date_time = #{dateTime}
+            </if>
+            <if test="sales != null">
+                and Sales = #{sales}
+            </if>
+            <if test="orderquantity != null">
+                and OrderQuantity = #{orderquantity}
+            </if>
+            <if test="numBuyers != null">
+                and Num_Buyers = #{numBuyers}
+            </if>
+            <if test="refundamount != null">
+                and RefundAmount = #{refundamount}
+            </if>
+            <if test="refundrate != null">
+                and RefundRate = #{refundrate}
+            </if>
+            <if test="actualsales != null">
+                and ActualSales = #{actualsales}
+            </if>
+            <if test="paymentrate != null">
+                and PaymentRate = #{paymentrate}
+            </if>
+            <if test="customerprice != null">
+                and CustomerPrice = #{customerprice}
+            </if>
+            <if test="totaltraffic != null">
+                and TotalTraffic = #{totaltraffic}
+            </if>
+            <if test="freetraffic != null">
+                and FreeTraffic = #{freetraffic}
+            </if>
+            <if test="freetrafficzb != null">
+                and FreeTrafficzb = #{freetrafficzb}
+            </if>
+            <if test="moresearchll != null">
+                and MoreSearchll = #{moresearchll}
+            </if>
+            <if test="manyscenesll != null">
+                and ManyScenesll = #{manyscenesll}
+            </if>
+            <if test="restassuredpushll != null">
+                and RestAssuredPushll = #{restassuredpushll}
+            </if>
+            <if test="taokepromotionll != null">
+                and TaokePromotionll = #{taokepromotionll}
+            </if>
+            <if test="aipromotionll != null">
+                and AIPromotionll = #{aipromotionll}
+            </if>
+            <if test="pinxiaobaoll != null">
+                and Pinxiaobaoll = #{pinxiaobaoll}
+            </if>
+            <if test="promotionflow != null">
+                and PromotionFlow = #{promotionflow}
+            </if>
+            <if test="promotionflowzb != null">
+                and PromotionFlowzb = #{promotionflowzb}
+            </if>
+            <if test="moresearchfy != null">
+                and MoreSearchfy = #{moresearchfy}
+            </if>
+            <if test="manyscenesfy != null">
+                and ManyScenesfy = #{manyscenesfy}
+            </if>
+            <if test="restassuredpushfy != null">
+                and RestAssuredPushfy = #{restassuredpushfy}
+            </if>
+            <if test="taokepromotionfy != null">
+                and TaokePromotionfy = #{taokepromotionfy}
+            </if>
+            <if test="aipromotionfy != null">
+                and AIPromotionfy = #{aipromotionfy}
+            </if>
+            <if test="pinxiaobaofy != null">
+                and Pinxiaobaofy = #{pinxiaobaofy}
+            </if>
+            <if test="promotioncost != null">
+                and PromotionCost = #{promotioncost}
+            </if>
+            <if test="promotioncostzb != null">
+                and PromotionCostzb = #{promotioncostzb}
+            </if>
+            <if test="platformbuckle != null">
+                and PlatformBuckle = #{platformbuckle}
+            </if>
+            <if test="otherexpenses != null">
+                and OtherExpenses = #{otherexpenses}
+            </if>
+            <if test="totalcost != null">
+                and TotalCost = #{totalcost}
+            </if>
+            <if test="costratio != null">
+                and CostRatio = #{costratio}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Sale(id,Platform_bh, Shop_bh, Date_time, Sales, OrderQuantity, Num_Buyers, RefundAmount, RefundRate, ActualSales, PaymentRate, CustomerPrice, TotalTraffic, FreeTraffic, FreeTrafficzb, MoreSearchll, ManyScenesll, RestAssuredPushll, TaokePromotionll, AIPromotionll, Pinxiaobaoll, PromotionFlow, PromotionFlowzb, MoreSearchfy, ManyScenesfy, RestAssuredPushfy, TaokePromotionfy, AIPromotionfy, Pinxiaobaofy, PromotionCost, PromotionCostzb, PlatformBuckle, OtherExpenses, TotalCost, CostRatio)
+        values (#{id},#{platformBh}, #{shopBh}, #{dateTime}, #{sales}, #{orderquantity}, #{numBuyers}, #{refundamount}, #{refundrate}, #{actualsales}, #{paymentrate}, #{customerprice}, #{totaltraffic}, #{freetraffic}, #{freetrafficzb}, #{moresearchll}, #{manyscenesll}, #{restassuredpushll}, #{taokepromotionll}, #{aipromotionll}, #{pinxiaobaoll}, #{promotionflow}, #{promotionflowzb}, #{moresearchfy}, #{manyscenesfy}, #{restassuredpushfy}, #{taokepromotionfy}, #{aipromotionfy}, #{pinxiaobaofy}, #{promotioncost}, #{promotioncostzb}, #{platformbuckle}, #{otherexpenses}, #{totalcost}, #{costratio})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Sale(Platform_bh, Shop_bh, Date_time, Sales, OrderQuantity, Num_Buyers, RefundAmount, RefundRate, ActualSales, PaymentRate, CustomerPrice, TotalTraffic, FreeTraffic, FreeTrafficzb, MoreSearchll, ManyScenesll, RestAssuredPushll, TaokePromotionll, AIPromotionll, Pinxiaobaoll, PromotionFlow, PromotionFlowzb, MoreSearchfy, ManyScenesfy, RestAssuredPushfy, TaokePromotionfy, AIPromotionfy, Pinxiaobaofy, PromotionCost, PromotionCostzb, PlatformBuckle, OtherExpenses, TotalCost, CostRatio)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.platformBh}, #{entity.shopBh}, #{entity.dateTime}, #{entity.sales}, #{entity.orderquantity}, #{entity.numBuyers}, #{entity.refundamount}, #{entity.refundrate}, #{entity.actualsales}, #{entity.paymentrate}, #{entity.customerprice}, #{entity.totaltraffic}, #{entity.freetraffic}, #{entity.freetrafficzb}, #{entity.moresearchll}, #{entity.manyscenesll}, #{entity.restassuredpushll}, #{entity.taokepromotionll}, #{entity.aipromotionll}, #{entity.pinxiaobaoll}, #{entity.promotionflow}, #{entity.promotionflowzb}, #{entity.moresearchfy}, #{entity.manyscenesfy}, #{entity.restassuredpushfy}, #{entity.taokepromotionfy}, #{entity.aipromotionfy}, #{entity.pinxiaobaofy}, #{entity.promotioncost}, #{entity.promotioncostzb}, #{entity.platformbuckle}, #{entity.otherexpenses}, #{entity.totalcost}, #{entity.costratio})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Sale(Platform_bh, Shop_bh, Date_time, Sales, OrderQuantity, Num_Buyers, RefundAmount, RefundRate, ActualSales, PaymentRate, CustomerPrice, TotalTraffic, FreeTraffic, FreeTrafficzb, MoreSearchll, ManyScenesll, RestAssuredPushll, TaokePromotionll, AIPromotionll, Pinxiaobaoll, PromotionFlow, PromotionFlowzb, MoreSearchfy, ManyScenesfy, RestAssuredPushfy, TaokePromotionfy, AIPromotionfy, Pinxiaobaofy, PromotionCost, PromotionCostzb, PlatformBuckle, OtherExpenses, TotalCost, CostRatio)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.platformBh}, #{entity.shopBh}, #{entity.dateTime}, #{entity.sales}, #{entity.orderquantity}, #{entity.numBuyers}, #{entity.refundamount}, #{entity.refundrate}, #{entity.actualsales}, #{entity.paymentrate}, #{entity.customerprice}, #{entity.totaltraffic}, #{entity.freetraffic}, #{entity.freetrafficzb}, #{entity.moresearchll}, #{entity.manyscenesll}, #{entity.restassuredpushll}, #{entity.taokepromotionll}, #{entity.aipromotionll}, #{entity.pinxiaobaoll}, #{entity.promotionflow}, #{entity.promotionflowzb}, #{entity.moresearchfy}, #{entity.manyscenesfy}, #{entity.restassuredpushfy}, #{entity.taokepromotionfy}, #{entity.aipromotionfy}, #{entity.pinxiaobaofy}, #{entity.promotioncost}, #{entity.promotioncostzb}, #{entity.platformbuckle}, #{entity.otherexpenses}, #{entity.totalcost}, #{entity.costratio})
+        </foreach>
+        on duplicate key update
+        Platform_bh = values(Platform_bh),
+        Shop_bh = values(Shop_bh),
+        Date_time = values(Date_time),
+        Sales = values(Sales),
+        OrderQuantity = values(OrderQuantity),
+        Num_Buyers = values(Num_Buyers),
+        RefundAmount = values(RefundAmount),
+        RefundRate = values(RefundRate),
+        ActualSales = values(ActualSales),
+        PaymentRate = values(PaymentRate),
+        CustomerPrice = values(CustomerPrice),
+        TotalTraffic = values(TotalTraffic),
+        FreeTraffic = values(FreeTraffic),
+        FreeTrafficzb = values(FreeTrafficzb),
+        MoreSearchll = values(MoreSearchll),
+        ManyScenesll = values(ManyScenesll),
+        RestAssuredPushll = values(RestAssuredPushll),
+        TaokePromotionll = values(TaokePromotionll),
+        AIPromotionll = values(AIPromotionll),
+        Pinxiaobaoll = values(Pinxiaobaoll),
+        PromotionFlow = values(PromotionFlow),
+        PromotionFlowzb = values(PromotionFlowzb),
+        MoreSearchfy = values(MoreSearchfy),
+        ManyScenesfy = values(ManyScenesfy),
+        RestAssuredPushfy = values(RestAssuredPushfy),
+        TaokePromotionfy = values(TaokePromotionfy),
+        AIPromotionfy = values(AIPromotionfy),
+        Pinxiaobaofy = values(Pinxiaobaofy),
+        PromotionCost = values(PromotionCost),
+        PromotionCostzb = values(PromotionCostzb),
+        PlatformBuckle = values(PlatformBuckle),
+        OtherExpenses = values(OtherExpenses),
+        TotalCost = values(TotalCost),
+        CostRatio = values(CostRatio)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update LS_Sale
+        <set>
+            <if test="platformBh != null and platformBh != ''">
+                Platform_bh = #{platformBh},
+            </if>
+            <if test="shopBh != null and shopBh != ''">
+                Shop_bh = #{shopBh},
+            </if>
+            <if test="dateTime != null">
+                Date_time = #{dateTime},
+            </if>
+            <if test="sales != null">
+                Sales = #{sales},
+            </if>
+            <if test="orderquantity != null">
+                OrderQuantity = #{orderquantity},
+            </if>
+            <if test="numBuyers != null">
+                Num_Buyers = #{numBuyers},
+            </if>
+            <if test="refundamount != null">
+                RefundAmount = #{refundamount},
+            </if>
+            <if test="refundrate != null">
+                RefundRate = #{refundrate},
+            </if>
+            <if test="actualsales != null">
+                ActualSales = #{actualsales},
+            </if>
+            <if test="paymentrate != null">
+                PaymentRate = #{paymentrate},
+            </if>
+            <if test="customerprice != null">
+                CustomerPrice = #{customerprice},
+            </if>
+            <if test="totaltraffic != null">
+                TotalTraffic = #{totaltraffic},
+            </if>
+            <if test="freetraffic != null">
+                FreeTraffic = #{freetraffic},
+            </if>
+            <if test="freetrafficzb != null">
+                FreeTrafficzb = #{freetrafficzb},
+            </if>
+            <if test="moresearchll != null">
+                MoreSearchll = #{moresearchll},
+            </if>
+            <if test="manyscenesll != null">
+                ManyScenesll = #{manyscenesll},
+            </if>
+            <if test="restassuredpushll != null">
+                RestAssuredPushll = #{restassuredpushll},
+            </if>
+            <if test="taokepromotionll != null">
+                TaokePromotionll = #{taokepromotionll},
+            </if>
+            <if test="aipromotionll != null">
+                AIPromotionll = #{aipromotionll},
+            </if>
+            <if test="pinxiaobaoll != null">
+                Pinxiaobaoll = #{pinxiaobaoll},
+            </if>
+            <if test="promotionflow != null">
+                PromotionFlow = #{promotionflow},
+            </if>
+            <if test="promotionflowzb != null">
+                PromotionFlowzb = #{promotionflowzb},
+            </if>
+            <if test="moresearchfy != null">
+                MoreSearchfy = #{moresearchfy},
+            </if>
+            <if test="manyscenesfy != null">
+                ManyScenesfy = #{manyscenesfy},
+            </if>
+            <if test="restassuredpushfy != null">
+                RestAssuredPushfy = #{restassuredpushfy},
+            </if>
+            <if test="taokepromotionfy != null">
+                TaokePromotionfy = #{taokepromotionfy},
+            </if>
+            <if test="aipromotionfy != null">
+                AIPromotionfy = #{aipromotionfy},
+            </if>
+            <if test="pinxiaobaofy != null">
+                Pinxiaobaofy = #{pinxiaobaofy},
+            </if>
+            <if test="promotioncost != null">
+                PromotionCost = #{promotioncost},
+            </if>
+            <if test="promotioncostzb != null">
+                PromotionCostzb = #{promotioncostzb},
+            </if>
+            <if test="platformbuckle != null">
+                PlatformBuckle = #{platformbuckle},
+            </if>
+            <if test="otherexpenses != null">
+                OtherExpenses = #{otherexpenses},
+            </if>
+            <if test="totalcost != null">
+                TotalCost = #{totalcost},
+            </if>
+            <if test="costratio != null">
+                CostRatio = #{costratio},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from LS_Sale where id = #{id}
+    </delete>
+
+    <select id="getdaochu" resultMap="LsSaleMap">
+        with
+        tmp_1 as
+        (
+        select
+        row_number() over (partition by Shop_bh order by Date_time) row1,
+        Shop_bh,-- 店铺bh
+        Date_time,
+        Sales -- 全店销售额
+        from LS_Sale a1 where a1.Date_time between #{datas1} and #{datas2} and Shop_bh in <foreach collection="shops" open="(" close=")" separator="," item="value">
+        #{value}
+    </foreach>
+        ),
+        tmp_2 as
+        (
+        select
+        row_number() over (partition by Shop_bh order by Date_time) row1,
+        Shop_bh,-- 店铺bh
+        Date_time,
+        Sales -- 全店销售额
+        from LS_Sale a1 where a1.Date_time between dateadd(dd,-1,#{datas1}) and dateadd(dd,-1,#{datas2})  and Shop_bh in
+        <foreach collection="shops" open="(" close=")" separator="," item="value">
+            #{value}
+        </foreach>
+        )
+        select
+        t1.Shop_bh,
+        t1.Date_time,
+        convert(decimal(17,4),(t1.Sales - t2.Sales)/t2.Sales) as sales
+        from tmp_1 t1
+        left join tmp_2 t2 on t1.row1 = t2.row1 and t1.Shop_bh = t2.Shop_bh
+    </select>
+
+
+</mapper>
+

@@ -1,0 +1,27 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/RoyalTtiger?createDatabaseIfNotExist=true
+    username: root
+    password: Mark@2019
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 800MB
+  sql:
+    init:
+      mode: always
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update # 没有表新建，有表更新操作,控制台显示建表语句
+    database: MySQL
+    show-sql: true
+mybatis-plus:
+  type-aliases-package: com.example.demo1.entity
+  configuration:
+   # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath*:/mapper/*Mapper.xml

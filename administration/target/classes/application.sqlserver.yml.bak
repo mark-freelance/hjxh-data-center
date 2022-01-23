@@ -1,0 +1,20 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:sqlserver://192.168.100.17:1433;DatabaseName=RoyalTtiger
+      username: sa
+      password: aaaaaa
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 800MB
+mybatis-plus:
+  type-aliases-package: com.example.demo1.entity
+  configuration:
+   # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath*:/mapper/*Mapper.xml

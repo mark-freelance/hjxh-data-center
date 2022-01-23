@@ -2,16 +2,23 @@ server:
   port: 9090
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      url: jdbc:sqlserver://192.168.100.17:1433;DatabaseName=RoyalTtiger
-      username: sa
-      password: aaaaaa
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:mysql://localhost:3306/RoyalTtiger?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   servlet:
     multipart:
       max-file-size: 300MB
       max-request-size: 800MB
+  sql:
+    init:
+      mode: always
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update # 没有表新建，有表更新操作,控制台显示建表语句
+    database: MySQL
+    show-sql: true
 mybatis-plus:
   type-aliases-package: com.example.demo1.entity
   configuration:

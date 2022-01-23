@@ -3,7 +3,6 @@ package com.mulaobao.administration.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mulaobao.administration.entity.CkWarehouse;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * (CkWarehouse)表数据库访问层

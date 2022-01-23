@@ -1,7 +1,6 @@
 package com.mulaobao.administration.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mulaobao.administration.entity.DpDdmx;
 import com.mulaobao.administration.entity.DpZwmx;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,6 +15,7 @@ import java.util.List;
  */
 @Mapper
 public interface DpZwmxDao extends BaseMapper<DpZwmx> {
-    void insertBatch(@Param("entities") List<DpZwmx> entities);
+
+	void insertBatch(@Param("entities") List<DpZwmx> entities);
 }
 

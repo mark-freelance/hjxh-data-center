@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulaobao.administration.dao.LsEmployeeDao">
+
+    <resultMap type="com.mulaobao.administration.entity.LsEmployee" id="LsEmployeeMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="personBh" column="Person_bh" jdbcType="VARCHAR"/>
+        <result property="person" column="Person" jdbcType="VARCHAR"/>
+        <result property="fz" column="fz" jdbcType="VARCHAR"/>
+        <result property="fpersonBh" column="fperson_bh" jdbcType="VARCHAR"/>
+        <result property="xsdate" column="xs_date" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <resultMap id="Menus" type="com.mulaobao.administration.entity.LsEmployee" extends="LsEmployeeMap">
+        <collection property="lsEmployees" ofType="com.mulaobao.administration.entity.LsEmployee">
+            <result property="id" column="id1" jdbcType="VARCHAR"/>
+            <result property="personBh" column="Person_bh1" jdbcType="VARCHAR"/>
+            <result property="person" column="Person1" jdbcType="VARCHAR"/>
+            <result property="fz" column="fz1" jdbcType="VARCHAR"/>
+            <result property="fpersonBh" column="fperson_bh1" jdbcType="VARCHAR"/>
+            <result property="xsdate" column="xs_date1" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="listLsEmployee" resultMap="Menus">
+        SELECT DISTINCT
+        m1.*,
+        m2.id id1,
+        m2.Person_bh Person_bh1,
+        m2.Person Person1,
+        m2.fperson_bh fperson_bh1,
+        m2.fz fz1
+        FROM
+        Ls_Employee m1,
+        Ls_Employee m2
+        WHERE
+        m1.Person_bh = m2.fperson_bh
+        ORDER BY
+        m1.Person_bh,
+        m2.Person_bh
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="LsEmployeeMap">
+        select
+          id, Person_bh, Person, fperson_bh
+        from LS_Employee
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="LsEmployeeMap">
+        select
+          id, Person_bh, Person, fperson_bh
+        from LS_Employee
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="personBh != null and personBh != ''">
+                and Person_bh = #{personBh}
+            </if>
+            <if test="person != null and person != ''">
+                and Person = #{person}
+            </if>
+            <if test="fpersonBh != null and fpersonBh != ''">
+                and fperson_bh = #{fpersonBh}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from LS_Employee
+        <where>
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="personBh != null and personBh != ''">
+                and Person_bh = #{personBh}
+            </if>
+            <if test="person != null and person != ''">
+                and Person = #{person}
+            </if>
+            <if test="fpersonBh != null and fpersonBh != ''">
+                and fperson_bh = #{fpersonBh}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Employee(id,Person_bh, Person, fperson_bh,fz)
+        values (#{id},#{personBh}, #{person}, #{fpersonBh},#{fz})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Employee(Person_bh, Person, fperson_bh)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.personBh}, #{entity.person}, #{entity.fpersonBh})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into LS_Employee(Person_bh, Person, fperson_bh)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.personBh}, #{entity.person}, #{entity.fpersonBh})
+        </foreach>
+        on duplicate key update
+        Person_bh = values(Person_bh),
+        Person = values(Person),
+        fperson_bh = values(fperson_bh)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update LS_Employee
+        <set>
+            <if test="personBh != null and personBh != ''">
+                Person_bh = #{personBh},
+            </if>
+            <if test="person != null and person != ''">
+                Person = #{person},
+            </if>
+            <if test="fpersonBh != null and fpersonBh != ''">
+                fperson_bh = #{fpersonBh},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from LS_Employee where id = #{id}
+    </delete>
+
+</mapper>
+

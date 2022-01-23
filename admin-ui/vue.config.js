@@ -27,6 +27,13 @@ module.exports = {
         host,
         port: 8089,
         //port:91,
-        proxy: `http://${host}:9090`
+        proxy: {
+            '/': {
+                target: 'http://localhost:9090',
+                changeOrigin: true,
+                logLevel: "debug",
+                secure: false
+            }
+        }
     }
 };

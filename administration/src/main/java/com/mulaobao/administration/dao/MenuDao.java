@@ -15,7 +15,8 @@ import java.util.List;
 @Mapper
 public interface MenuDao extends BaseMapper<Menu> {
 
-        List<Menu> getMenusId(Integer id);
-        List<Menu> getMenusByAdminId(Integer id);
+	List<Menu> getMenusId(Integer id);
+
+	List<Menu> getMenusByAdminId(Integer id);
 }
 

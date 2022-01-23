@@ -1,0 +1,12 @@
+GET http://localhost:9090/user
+
+<> 2022-01-23T004639.404.txt
+
+###
+
+GET http://localhost:9090/user
+
+<> 2022-01-23T004618.404.txt
+
+###
+

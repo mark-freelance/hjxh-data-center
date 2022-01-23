@@ -1,7 +1,6 @@
 package com.mulaobao.administration.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mulaobao.administration.entity.DpDdmx;
 import com.mulaobao.administration.entity.WdtCkmx;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -17,6 +16,6 @@ import java.util.List;
 @Mapper
 public interface WdtCkmxDao extends BaseMapper<WdtCkmx> {
 
-    void insertBatch(@Param("entities") List<WdtCkmx> entities);
+	void insertBatch(@Param("entities") List<WdtCkmx> entities);
 }
 
